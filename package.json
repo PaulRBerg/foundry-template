@@ -1,0 +1,40 @@
+{
+  "name": "@prb/foundry-template",
+  "description": "Foundry-based template for developing Solidity smart contracts",
+  "version": "1.0.0",
+  "author": {
+    "name": "Paul Razvan Berg",
+    "url": "https://github.com/paulrberg"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "prettier-plugin-solidity": "^1.0.0-dev.22",
+    "solhint": "^3.3.7",
+    "solhint-plugin-prettier": "^0.0.5"
+  },
+  "keywords": [
+    "blockchain",
+    "ethereum",
+    "forge",
+    "foundry",
+    "smart-contracts",
+    "solidity",
+    "template"
+  ],
+  "packageManager": "yarn@3.2.1",
+  "private": true,
+  "scripts": {
+    "lint": "yarn solhint && yarn prettier:check",
+    "lint:check": "yarn prettier:check && yarn solhint:check",
+    "postinstall": "husky install",
+    "prettier": "prettier --config \"./.prettierrc.yml\" --write \"**/*.{json,md,sol,yml}\"",
+    "prettier:check": "prettier --config \"./.prettierrc.yml\" --check \"**/*.{json,md,sol,yml}\"",
+    "solhint": "solhint --config \"./.solhint.json\" \"{src,test}/**/*.sol\""
+  }
+}

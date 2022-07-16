@@ -1,0 +1,15 @@
+# directories
+.yarn/
+**/broadcast
+**/cache
+**/lib
+**/out
+**/node_modules
+
+# files
+*.env
+*.log
+.pnp.*
+coverage.json
+yarn-debug.log*
+yarn-error.log*
