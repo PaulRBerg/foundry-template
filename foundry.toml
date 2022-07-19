@@ -13,5 +13,5 @@ src = "src"
 test = "test"
 
 [profile.ci]
-fuzz_runs = 10_000
+fuzz_runs = 1_000
 verbosity = 4
