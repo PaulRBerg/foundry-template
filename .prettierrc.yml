@@ -10,6 +10,4 @@ overrides:
   - files: ["*.sol"]
     options:
       compiler: "0.8.15"
-  - files: ["*.sol", "*.toml"]
-    options:
       tabWidth: 4
