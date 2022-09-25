@@ -1,5 +1,7 @@
-# Foundry Template [![Github Actions][gha-badge]][gha] [![Foundry][foundry-badge]][foundry] [![License: MIT][license-badge]][license]
+# Foundry Template [![Open in Gitpod][gitpod-badge]][gitpod] [![Github Actions][gha-badge]][gha] [![Foundry][foundry-badge]][foundry] [![License: MIT][license-badge]][license]
 
+[gitpod]: https://gitpod.io/#https://github.com/paulrberg/foundry-template
+[gitpod-badge]: https://img.shields.io/badge/Gitpod-Open%20in%20Gitpod-FFB45B?logo=gitpod
 [gha]: https://github.com/paulrberg/foundry-template/actions
 [gha-badge]: https://github.com/paulrberg/foundry-template/actions/workflows/ci.yml/badge.svg
 [foundry]: https://getfoundry.sh/
