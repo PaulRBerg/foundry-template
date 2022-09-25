@@ -9,7 +9,7 @@ libs = ["lib"]
 optimizer = true
 optimizer_runs = 10_000
 out = "out"
-solc = "0.8.16"
+solc = "0.8.17"
 src = "src"
 test = "test"
 
