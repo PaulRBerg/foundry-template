@@ -3,7 +3,7 @@
 [profile.default]
 auto_detect_solc = false
 bytecode_hash = "none"
-fuzz_runs = 256
+fuzz = { runs = 256 }
 gas_reports = ["*"]
 libs = ["lib"]
 optimizer = true
@@ -13,6 +13,7 @@ solc = "0.8.17"
 src = "src"
 test = "test"
 
+
 [profile.ci]
-fuzz_runs = 1_000
+fuzz = { runs = 1_000 }
 verbosity = 4
