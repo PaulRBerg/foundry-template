@@ -30,6 +30,9 @@
   ],
   "packageManager": "yarn@3.2.4",
   "private": true,
+  "resolutions": {
+    "solhint/@solidity-parser/parser": "^0.14.5"
+  },
   "scripts": {
     "clean": "rimraf cache out",
     "lint": "yarn lint:sol && yarn prettier:check",

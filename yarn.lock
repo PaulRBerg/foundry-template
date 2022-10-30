@@ -317,16 +317,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@solidity-parser/parser@npm:^0.14.1":
-  version: 0.14.2
-  resolution: "@solidity-parser/parser@npm:0.14.2"
-  dependencies:
-    antlr4ts: ^0.5.0-alpha.4
-  checksum: 7d1dd44beb27e8a6ad2cca6f99d2536eaafd9ec156b6bfff64475e1c85e2e1d3cd84f697e275d7c0742aa365ecade6f68b15ed8cd8b0f339ee239a91fdbda37c
-  languageName: node
-  linkType: hard
-
-"@solidity-parser/parser@npm:^0.14.3":
+"@solidity-parser/parser@npm:^0.14.3, @solidity-parser/parser@npm:^0.14.5":
   version: 0.14.5
   resolution: "@solidity-parser/parser@npm:0.14.5"
   dependencies:
