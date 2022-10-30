@@ -28,7 +28,7 @@
     "solidity",
     "template"
   ],
-  "packageManager": "yarn@3.2.1",
+  "packageManager": "yarn@3.2.4",
   "private": true,
   "scripts": {
     "clean": "rimraf cache out",
