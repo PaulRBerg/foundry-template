@@ -15,6 +15,7 @@
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "prettier-plugin-solidity": "^1.0.0-dev.22",
+    "rimraf": "^3.0.2",
     "solhint": "^3.3.7",
     "solhint-plugin-prettier": "^0.0.5"
   },
@@ -30,6 +31,7 @@
   "packageManager": "yarn@3.2.1",
   "private": true,
   "scripts": {
+    "clean": "rimraf cache out",
     "lint": "solhint --config \"./.solhint.json\" \"{src,test}/**/*.sol\"",
     "postinstall": "husky install",
     "prettier": "prettier --config \"./.prettierrc.yml\" --write \"**/*.{json,md,sol,yml}\"",

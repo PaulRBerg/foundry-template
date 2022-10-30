@@ -266,6 +266,7 @@ __metadata:
     lint-staged: ^13.0.3
     prettier: ^2.7.1
     prettier-plugin-solidity: ^1.0.0-dev.22
+    rimraf: ^3.0.2
     solhint: ^3.3.7
     solhint-plugin-prettier: ^0.0.5
   languageName: unknown
@@ -2800,6 +2801,17 @@ __metadata:
   bin:
     rimraf: ./bin.js
   checksum: 3ea587b981a19016297edb96d1ffe48af7e6af69660e3b371dbfc73722a73a0b0e9be5c88089fbeeb866c389c1098e07f64929c7414290504b855f54f901ab10
+  languageName: node
+  linkType: hard
+
+"rimraf@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "rimraf@npm:3.0.2"
+  dependencies:
+    glob: ^7.1.3
+  bin:
+    rimraf: bin.js
+  checksum: 87f4164e396f0171b0a3386cc1877a817f572148ee13a7e113b238e48e8a9f2f31d009a92ec38a591ff1567d9662c6b67fd8818a2dbbaed74bc26a87a2a4a9a0
   languageName: node
   linkType: hard
 
