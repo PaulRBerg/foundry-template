@@ -32,7 +32,8 @@
   "private": true,
   "scripts": {
     "clean": "rimraf cache out",
-    "lint": "solhint --config \"./.solhint.json\" \"{src,test}/**/*.sol\"",
+    "lint": "yarn lint:sol && yarn prettier:check",
+    "lint:sol": "solhint \"{src,test}/**/*.sol\"",
     "postinstall": "husky install",
     "prettier": "prettier --config \"./.prettierrc.yml\" --write \"**/*.{json,md,sol,yml}\"",
     "prettier:check": "prettier --config \"./.prettierrc.yml\" --check \"**/*.{json,md,sol,yml}\""
