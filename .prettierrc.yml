@@ -5,6 +5,7 @@ proseWrap: "always"
 singleQuote: false
 tabWidth: 2
 trailingComma: "all"
+useTabs: false
 
 overrides:
   - files: ["*.sol"]
