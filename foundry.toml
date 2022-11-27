@@ -13,7 +13,6 @@ solc = "0.8.17"
 src = "src"
 test = "test"
 
-
 [profile.ci]
 fuzz = { runs = 1_000 }
 verbosity = 4
