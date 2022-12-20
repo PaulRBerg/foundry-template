@@ -118,6 +118,14 @@ Compile the contracts:
 $ forge build
 ```
 
+### Coverage
+
+Get a test coverage report:
+
+```sh
+$ forge coverage
+```
+
 ### Deploy
 
 Deploy to Anvil:
