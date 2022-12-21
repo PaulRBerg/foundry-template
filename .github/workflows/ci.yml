@@ -48,7 +48,7 @@ jobs:
       - name: "Run the tests"
         run: "forge test"
 
-      - name: "Build the contracts"
+      - name: "Check that the contracts are each under 24kB"
         run: |
           forge --version
           forge build --sizes
