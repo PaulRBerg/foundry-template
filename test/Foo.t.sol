@@ -13,7 +13,7 @@ contract FooTest is PRBTest, StdCheats {
     }
 
     /// @dev Run Forge with `-vvvv` to see console logs.
-    function testExample() public {
+    function testExample() external {
         console2.log("Hello World");
         assertTrue(true);
     }
