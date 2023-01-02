@@ -11,9 +11,11 @@
 
 # files
 *.env
+*.html
 *.log
 .DS_Store
 .pnp.*
+lcov.info
 yarn-debug.log*
 yarn-error.log*
 
