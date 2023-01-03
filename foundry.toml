@@ -1,5 +1,13 @@
 # Full reference https://github.com/foundry-rs/foundry/tree/master/config
 
+[fmt]
+bracket_spacing = true
+int_types = "long"
+line_length = 120
+number_underscore = "thousands"
+quote_style = "double"
+tab_width = 4
+
 [profile.default]
 auto_detect_solc = false
 bytecode_hash = "none"
@@ -16,3 +24,4 @@ test = "test"
 [profile.ci]
 fuzz = { runs = 10_000 }
 verbosity = 4
+
