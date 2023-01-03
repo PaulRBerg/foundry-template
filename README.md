@@ -61,6 +61,14 @@ This template comes with sensible default configurations in the following files:
 └── remappings.txt
 ```
 
+### VSCode Integration
+
+This template is IDE agnostic, but for the best user experience, you may want to use it in VSCode with Juan Blanco's
+[Solidity extension](https://github.com/juanfranblanco/vscode-solidity).
+
+For guidance on how to integrate a Foundry project in VSCode, please refer to this
+[guide](https://book.getfoundry.sh/config/vscode).
+
 ### GitHub Actions
 
 This template comes with GitHub Actions pre-configured. Your contracts will be linted and tested on every push and pull
@@ -140,10 +148,10 @@ For instructions on how to deploy to a testnet or mainnet, check out the
 
 ### Format
 
-Format the contracts with Prettier:
+Format the contracts:
 
 ```sh
-$ yarn prettier
+$ forge fmt
 ```
 
 ### Gas Usage
