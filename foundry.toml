@@ -6,9 +6,9 @@ int_types = "long"
 line_length = 120
 multiline_func_header = "all"
 number_underscore = "thousands"
+override_spacing = false
 quote_style = "double"
 tab_width = 4
-variable_override_spacing = false
 wrap_comments = true
 
 [profile.default]
