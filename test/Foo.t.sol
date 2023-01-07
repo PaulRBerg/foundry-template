@@ -13,9 +13,16 @@ contract FooTest is PRBTest, StdCheats {
         // solhint-disable-previous-line no-empty-blocks
     }
 
-    /// @dev Run Forge with `-vvvv` to see console logs.
-    function testExample() external {
+    /// @dev Simple test. Run Forge with `-vvvv` to see console logs.
+    function test_Example() external {
         console2.log("Hello World");
         assertTrue(true);
+    }
+
+    /// @dev Test that fuzzes an unsigned integer. Run Forge with `-vvvv` to see console logs.
+    function testFuzz_Example(uint256 x) external {
+        vm.assume(x != 0);
+        console2.log("x", x);
+        assertTrue(x > 0);
     }
 }

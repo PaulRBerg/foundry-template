@@ -3,6 +3,7 @@
   "rules": {
     "code-complexity": ["error", 8],
     "compiler-version": ["error", ">=0.8.4"],
+    "func-name-mixedcase": "off",
     "func-visibility": ["error", { "ignoreConstructors": true }],
     "max-line-length": ["error", 120],
     "not-rely-on-time": "off",
