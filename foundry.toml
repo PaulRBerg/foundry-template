@@ -1,5 +1,8 @@
 # Full reference https://github.com/foundry-rs/foundry/tree/master/config
 
+[etherscan]
+goerli = { key = "${ETHERSCAN_API_KEY}" }
+
 [fmt]
 bracket_spacing = true
 int_types = "long"
@@ -27,3 +30,6 @@ test = "test"
 fuzz = { runs = 10_000 }
 verbosity = 4
 
+[rpc_endpoints]
+localhost="http://localhost:8545"
+goerli="https://goerli.infura.io/v3/${INFURA_API_KEY}"
