@@ -28,8 +28,8 @@ sedi () {
   sed --version >/dev/null 2>&1 && sed -i -- "$@" || sed -i "" "$@"
 }
 
-# Rename instances of "paulrberg/foundry-template" to the new repo name in README.md for badges only
-sedi "/gitpod/ s|paulrberg/foundry-template|"${GITHUB_REPOSITORY}"|;" "README.md"
-sedi "/gitpod-badge/ s|paulrberg/foundry-template|"${GITHUB_REPOSITORY}"|;" "README.md"
-sedi "/gha/ s|paulrberg/foundry-template|"${GITHUB_REPOSITORY}"|;" "README.md"
-sedi "/gha-badge/ s|paulrberg/foundry-template|"${GITHUB_REPOSITORY}"|;" "README.md"
+# Rename instances of "PaulRBerg/foundry-template" to the new repo name in README.md for badges only
+sedi "/gitpod/ s|PaulRBerg/foundry-template|"${GITHUB_REPOSITORY}"|;" "README.md"
+sedi "/gitpod-badge/ s|PaulRBerg/foundry-template|"${GITHUB_REPOSITORY}"|;" "README.md"
+sedi "/gha/ s|PaulRBerg/foundry-template|"${GITHUB_REPOSITORY}"|;" "README.md"
+sedi "/gha-badge/ s|PaulRBerg/foundry-template|"${GITHUB_REPOSITORY}"|;" "README.md"

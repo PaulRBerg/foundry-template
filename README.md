@@ -1,9 +1,9 @@
 # Foundry Template [![Open in Gitpod][gitpod-badge]][gitpod] [![Github Actions][gha-badge]][gha] [![Foundry][foundry-badge]][foundry] [![License: MIT][license-badge]][license]
 
-[gitpod]: https://gitpod.io/#https://github.com/paulrberg/foundry-template
+[gitpod]: https://gitpod.io/#https://github.com/PaulRBerg/foundry-template
 [gitpod-badge]: https://img.shields.io/badge/Gitpod-Open%20in%20Gitpod-FFB45B?logo=gitpod
-[gha]: https://github.com/paulrberg/foundry-template/actions
-[gha-badge]: https://github.com/paulrberg/foundry-template/actions/workflows/ci.yml/badge.svg
+[gha]: https://github.com/PaulRBerg/foundry-template/actions
+[gha-badge]: https://github.com/PaulRBerg/foundry-template/actions/workflows/ci.yml/badge.svg
 [foundry]: https://getfoundry.sh/
 [foundry-badge]: https://img.shields.io/badge/Built%20with-Foundry-FFDB1C.svg
 [license]: https://opensource.org/licenses/MIT
@@ -15,20 +15,20 @@ A Foundry-based template for developing Solidity smart contracts, with sensible 
 
 - [Forge](https://github.com/foundry-rs/foundry/blob/master/forge): compile, test, fuzz, debug and deploy smart
   contracts
-- [PRBTest](https://github.com/paulrberg/prb-test): modern collection of testing assertions and logging utilities
+- [PRBTest](https://github.com/PaulRBerg/prb-test): modern collection of testing assertions and logging utilities
 - [Forge Std](https://github.com/foundry-rs/forge-std): collection of helpful contracts and cheatcodes for testing
 - [Solhint](https://github.com/protofire/solhint): code linter
 - [Prettier Plugin Solidity](https://github.com/prettier-solidity/prettier-plugin-solidity): code formatter
 
 ## Getting Started
 
-Click the [`Use this template`](https://github.com/paulrberg/foundry-template/generate) button at the top of the page to
+Click the [`Use this template`](https://github.com/PaulRBerg/foundry-template/generate) button at the top of the page to
 create a new repository with this repo as the initial state.
 
 Or, if you prefer to install the template manually:
 
 ```sh
-forge init my-project --template https://github.com/paulrberg/foundry-template
+forge init my-project --template https://github.com/PaulRBerg/foundry-template
 cd my-project
 yarn install # install solhint and prettier and other goodies
 ```
@@ -90,7 +90,7 @@ commit.
 
 ## Writing Tests
 
-To write a new test contract, you start by importing [PRBTest](https://github.com/paulrberg/prb-test) and inherit from
+To write a new test contract, you start by importing [PRBTest](https://github.com/PaulRBerg/prb-test) and inherit from
 it in your test contract. PRBTest comes with a pre-instantiated [cheatcodes](https://book.getfoundry.sh/cheatcodes/)
 environment accessible via the `vm` property. You can also use
 [console.log](https://book.getfoundry.sh/faq?highlight=console.log#how-do-i-use-consolelog), whose logs you can see in
