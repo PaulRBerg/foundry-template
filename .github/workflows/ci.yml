@@ -1,7 +1,11 @@
 name: "CI"
 
 env:
+  ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
+  ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
   FOUNDRY_PROFILE: "ci"
+  INFURA_API_KEY: ${{ secrets.INFURA_API_KEY }}
+  MNEMONIC: ${{ secrets.MNEMONIC }}
 
 on:
   pull_request:
