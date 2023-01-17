@@ -24,7 +24,7 @@ jobs:
         with:
           submodules: "recursive"
 
-      - name: "Install Foundry"
+      - name: "Install Foundry and restore the RPC cache, if any"
         uses: "foundry-rs/foundry-toolchain@v1"
 
       - name: "Install Node.js"
@@ -46,6 +46,12 @@ jobs:
 
       - name: "Show the Foundry config"
         run: "forge config"
+
+      - name: "Generate fuzz seed that changes weekly to avoid burning through RPC allowance"
+        run: >
+          echo "FOUNDRY_FUZZ_SEED=$(
+            echo $(($EPOCHSECONDS - $EPOCHSECONDS % 604800))
+          )" >> $GITHUB_ENV
 
       - name: "Run the tests"
         run: "forge test"
