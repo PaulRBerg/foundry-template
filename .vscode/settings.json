@@ -1,0 +1,6 @@
+{
+  "[solidity]": {
+    "editor.defaultFormatter": "JuanBlanco.solidity"
+  },
+  "solidity.formatter": "forge"
+}
