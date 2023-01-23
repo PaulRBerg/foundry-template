@@ -6,3 +6,7 @@
   branch = "0.3.1"
   path = "lib/prb-test"
   url = "https://github.com/PaulRBerg/prb-test"
+[submodule "lib/prb-math"]
+	path = lib/prb-math
+	url = https://github.com/PaulRBerg/prb-math
+	branch = v3.2.0
