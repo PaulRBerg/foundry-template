@@ -5,7 +5,7 @@ import { Script } from "forge-std/Script.sol";
 import { Foo } from "../src/Foo.sol";
 
 /// @dev See the Solidity Scripting tutorial: https://book.getfoundry.sh/tutorials/solidity-scripting
-contract FooScript is Script {
+contract DeployFoo is Script {
     Foo internal foo;
 
     function run() public {

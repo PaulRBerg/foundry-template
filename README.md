@@ -139,7 +139,7 @@ $ forge coverage
 Deploy to Anvil:
 
 ```sh
-$ forge script script/Foo.s.sol --broadcast --fork-url http://localhost:8545
+$ forge script script/DeployFoo.s.sol --broadcast --fork-url http://localhost:8545
 ```
 
 For instructions on how to deploy to a testnet or mainnet, check out the
