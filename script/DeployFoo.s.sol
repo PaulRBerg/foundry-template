@@ -6,10 +6,16 @@ import { Foo } from "../src/Foo.sol";
 
 /// @dev See the Solidity Scripting tutorial: https://book.getfoundry.sh/tutorials/solidity-scripting
 contract DeployFoo is Script {
+    address internal deployer;
     Foo internal foo;
 
+    function setUp() public virtual {
+        string memory mnemonic = vm.envString("MNEMONIC");
+        (deployer,) = deriveRememberKey(mnemonic, 0);
+    }
+
     function run() public {
-        vm.startBroadcast();
+        vm.startBroadcast(deployer);
         foo = new Foo();
         vm.stopBroadcast();
     }
