@@ -15,16 +15,11 @@ on:
       - "main"
 
 jobs:
-  ci:
+  lint:
     runs-on: "ubuntu-latest"
     steps:
       - name: "Check out the repo"
         uses: "actions/checkout@v3"
-        with:
-          submodules: "recursive"
-
-      - name: "Install Foundry and restore the RPC cache, if any"
-        uses: "foundry-rs/foundry-toolchain@v1"
 
       - name: "Install Node.js"
         uses: "actions/setup-node@v3"
@@ -40,13 +35,44 @@ jobs:
 
       - name: "Add lint summary"
         run: |
-          echo "## Lint" >> $GITHUB_STEP_SUMMARY
+          echo "## Lint result" >> $GITHUB_STEP_SUMMARY
           echo "✅ Passed" >> $GITHUB_STEP_SUMMARY
+
+  build:
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "Check out the repo"
+        uses: "actions/checkout@v3"
+        with:
+          submodules: "recursive"
+
+      - name: "Install Foundry"
+        uses: "foundry-rs/foundry-toolchain@v1"
+
+      - name: "Build the contracts and print their size"
+        run: "forge build --sizes"
+
+      - name: "Add build summary"
+        run: |
+          echo "## Build result" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Passed" >> $GITHUB_STEP_SUMMARY
+
+  test:
+    needs: ["lint", "build"]
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "Check out the repo"
+        uses: "actions/checkout@v3"
+        with:
+          submodules: "recursive"
+
+      - name: "Install Foundry"
+        uses: "foundry-rs/foundry-toolchain@v1"
 
       - name: "Show the Foundry config"
         run: "forge config"
 
-      - name: "Generate fuzz seed that changes weekly to avoid burning through RPC allowance"
+      - name: "Generate a fuzz seed that changes weekly to avoid burning through RPC allowance"
         run: >
           echo "FOUNDRY_FUZZ_SEED=$(
             echo $(($EPOCHSECONDS - $EPOCHSECONDS % 604800))
@@ -55,12 +81,7 @@ jobs:
       - name: "Run the tests"
         run: "forge test"
 
-      - name: "Check that the contracts are each under 24kB"
-        run: |
-          forge --version
-          forge build --sizes
-
       - name: "Add test summary"
         run: |
-          echo "## Tests" >> $GITHUB_STEP_SUMMARY
+          echo "## Tests result" >> $GITHUB_STEP_SUMMARY
           echo "✅ Passed" >> $GITHUB_STEP_SUMMARY

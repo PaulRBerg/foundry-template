@@ -2,5 +2,7 @@
 pragma solidity >=0.8.18;
 
 contract Foo {
-// solhint-disable-previous-line no-empty-blocks
+    function id(uint256 value) external pure returns (uint256) {
+        return value;
+    }
 }
