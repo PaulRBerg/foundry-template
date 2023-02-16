@@ -13,12 +13,13 @@ A Foundry-based template for developing Solidity smart contracts, with sensible 
 
 ## What's Inside
 
-- [Forge](https://github.com/foundry-rs/foundry/blob/master/forge): compile, test, fuzz, debug and deploy smart
+- [Forge](https://github.com/foundry-rs/foundry/blob/master/forge): compile, test, fuzz, format, and deploy smart
   contracts
 - [PRBTest](https://github.com/PaulRBerg/prb-test): modern collection of testing assertions and logging utilities
 - [Forge Std](https://github.com/foundry-rs/forge-std): collection of helpful contracts and cheatcodes for testing
-- [Solhint](https://github.com/protofire/solhint): code linter
-- [Prettier Plugin Solidity](https://github.com/prettier-solidity/prettier-plugin-solidity): code formatter
+- [Solhint](https://github.com/protofire/solhint): linter for Solidity code
+- [Prettier Plugin Solidity](https://github.com/prettier-solidity/prettier-plugin-solidity): code formatter for
+  non-Solidity files
 
 ## Getting Started
 
@@ -30,7 +31,7 @@ Or, if you prefer to install the template manually:
 ```sh
 forge init my-project --template https://github.com/PaulRBerg/foundry-template
 cd my-project
-yarn install # install solhint and prettier and other goodies
+yarn install # install Solhint, Prettier, and other tools
 ```
 
 If this is your first time with Foundry, check out the
@@ -39,7 +40,7 @@ If this is your first time with Foundry, check out the
 ## Features
 
 This template builds upon the frameworks and libraries mentioned above, so for details about their specific features,
-please consult their respective documentations.
+please consult their respective documentation.
 
 For example, for Foundry, you can refer to the [Foundry Book](https://book.getfoundry.sh/). You might be in particular
 interested in reading the [Writing Tests](https://book.getfoundry.sh/forge/writing-tests.html) guide.
@@ -52,6 +53,7 @@ This template comes with sensible default configurations in the following files:
 ├── .commitlintrc.yml
 ├── .editorconfig
 ├── .gitignore
+├── .lintstagedrc.yml
 ├── .prettierignore
 ├── .prettierrc.yml
 ├── .solhintignore
@@ -85,8 +87,8 @@ automated tools on top of.
 ### Git Hooks
 
 This template uses [Husky](https://github.com/typicode/husky) to run automated checks on commit messages, and
-[Lint Staged](https://github.com/okonet/lint-staged) to automatically format the code with Prettier when making a git
-commit.
+[Lint Staged](https://github.com/okonet/lint-staged) to automatically format the code with Forge and Prettier when
+making a git commit.
 
 ## Writing Tests
 
@@ -94,7 +96,7 @@ To write a new test contract, you start by importing [PRBTest](https://github.co
 it in your test contract. PRBTest comes with a pre-instantiated [cheatcodes](https://book.getfoundry.sh/cheatcodes/)
 environment accessible via the `vm` property. You can also use
 [console.log](https://book.getfoundry.sh/faq?highlight=console.log#how-do-i-use-consolelog), whose logs you can see in
-the terminal output by adding the `-vvvv` flag.
+the terminal output by adding the `-vvv` flag.
 
 This template comes with an example test contract [Foo.t.sol](./test/Foo.t.sol).
 
