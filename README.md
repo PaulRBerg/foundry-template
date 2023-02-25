@@ -31,7 +31,7 @@ Or, if you prefer to install the template manually:
 ```sh
 forge init my-project --template https://github.com/PaulRBerg/foundry-template
 cd my-project
-yarn install # install Solhint, Prettier, and other tools
+yarn install # install Solhint, Prettier, and other Node.js deps
 ```
 
 If this is your first time with Foundry, check out the
@@ -42,12 +42,14 @@ If this is your first time with Foundry, check out the
 This template builds upon the frameworks and libraries mentioned above, so for details about their specific features,
 please consult their respective documentation.
 
-For example, for Foundry, you can refer to the [Foundry Book](https://book.getfoundry.sh/). You might be in particular
-interested in reading the [Writing Tests](https://book.getfoundry.sh/forge/writing-tests.html) guide.
+For example, if you're interested in exploring Foundry in more detail, you should look at the
+[Foundry Book](https://book.getfoundry.sh/). In particular, you may be interested in reading the
+[Writing Tests](https://book.getfoundry.sh/forge/writing-tests.html) tutorial.
 
 ### Sensible Defaults
 
-This template comes with sensible default configurations in the following files:
+This template comes with a set of sensible default configurations for you to use. These defaults can be found in the
+following files:
 
 ```text
 ├── .editorconfig
@@ -62,8 +64,8 @@ This template comes with sensible default configurations in the following files:
 
 ### VSCode Integration
 
-This template is IDE agnostic, but for the best user experience, you may want to use it in VSCode with Juan Blanco's
-[Solidity extension](https://github.com/juanfranblanco/vscode-solidity).
+This template is IDE agnostic, but for the best user experience, you may want to use it in VSCode alongside Juan
+Blanco's [Solidity extension](https://github.com/juanfranblanco/vscode-solidity).
 
 For guidance on how to integrate a Foundry project in VSCode, please refer to this
 [guide](https://book.getfoundry.sh/config/vscode).
@@ -79,15 +81,14 @@ You can edit the CI script in [.github/workflows/ci.yml](./.github/workflows/ci.
 
 To write a new test contract, you start by importing [PRBTest](https://github.com/PaulRBerg/prb-test) and inherit from
 it in your test contract. PRBTest comes with a pre-instantiated [cheatcodes](https://book.getfoundry.sh/cheatcodes/)
-environment accessible via the `vm` property. You can also use
-[console.log](https://book.getfoundry.sh/faq?highlight=console.log#how-do-i-use-consolelog), whose logs you can see in
-the terminal output by adding the `-vvv` flag.
+environment accessible via the `vm` property. If you would like to view the logs in the terminal output you can add the
+`-vvv` flag and use [console.log](https://book.getfoundry.sh/faq?highlight=console.log#how-do-i-use-consolelog).
 
 This template comes with an example test contract [Foo.t.sol](./test/Foo.t.sol).
 
 ## Usage
 
-Here's a list of the most frequently needed commands.
+This is a list of the most frequently needed commands.
 
 ### Build
 
@@ -133,7 +134,7 @@ For this script to work, you need to have a `MNEMONIC` environment variable set 
 [BIP39 mnemonic](https://iancoleman.io/bip39/).
 
 For instructions on how to deploy to a testnet or mainnet, check out the
-[Solidity Scripting tutorial](https://book.getfoundry.sh/tutorials/solidity-scripting.html).
+[Solidity Scripting](https://book.getfoundry.sh/tutorials/solidity-scripting.html) tutorial.
 
 ### Format
 
@@ -169,11 +170,11 @@ $ forge test
 
 ## Notes
 
-1. Foundry piggybacks off [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to manage dependencies.
-   There's a [guide](https://book.getfoundry.sh/projects/dependencies.html) about how to work with dependencies in the
-   book.
+1. Foundry uses [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to manage dependencies. For
+   detailed instructions on working with dependencies, please refer to the
+   [guide](https://book.getfoundry.sh/projects/dependencies.html) in the book
 2. You don't have to create a `.env` file, but filling in the environment variables may be useful when debugging and
-   testing against a mainnet fork.
+   testing against a fork.
 
 ## Related Efforts
 
