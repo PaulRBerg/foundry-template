@@ -1,4 +1,0 @@
-"*.{json,md,yml}":
-  - prettier --write
-"*.sol":
-  - forge fmt
