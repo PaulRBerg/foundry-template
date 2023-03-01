@@ -29,10 +29,10 @@ contract FooTest is PRBTest, StdCheats {
         assertGt(x, 0);
     }
 
-    /// @dev Test that runs against a fork of Ethereum Mainnet. You need to set `ALCHEMY_API_KEY` in your environment
+    /// @dev Test that runs against a fork of Ethereum Mainnet. You need to set `API_KEY_ALCHEMY` in your environment
     /// for this test to run - you can get an API key for free at https://alchemy.com.
     function testFork_Example() external {
-        string memory alchemyApiKey = vm.envOr("ALCHEMY_API_KEY", string(""));
+        string memory alchemyApiKey = vm.envOr("API_KEY_ALCHEMY", string(""));
         // Silently pass this test if the user didn't define the API key.
         if (bytes(alchemyApiKey).length == 0) {
             return;
