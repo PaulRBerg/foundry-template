@@ -64,8 +64,8 @@ following files:
 
 ### VSCode Integration
 
-This template is IDE agnostic, but for the best user experience, you may want to use it in VSCode alongside Juan
-Blanco's [Solidity extension](https://github.com/juanfranblanco/vscode-solidity).
+This template is IDE agnostic, but for the best user experience, you may want to use it in VSCode alongside Nomic
+Foundation's [Solidity extension](https://marketplace.visualstudio.com/items?itemName=NomicFoundation.hardhat-solidity).
 
 For guidance on how to integrate a Foundry project in VSCode, please refer to this
 [guide](https://book.getfoundry.sh/config/vscode).
@@ -84,7 +84,7 @@ it in your test contract. PRBTest comes with a pre-instantiated [cheatcodes](htt
 environment accessible via the `vm` property. If you would like to view the logs in the terminal output you can add the
 `-vvv` flag and use [console.log](https://book.getfoundry.sh/faq?highlight=console.log#how-do-i-use-consolelog).
 
-This template comes with an example test contract [Foo.t.sol](./test/Foo.t.sol).
+This template comes with an example test contract [Foo.t.sol](./test/Foo.t.sol)
 
 ## Usage
 
