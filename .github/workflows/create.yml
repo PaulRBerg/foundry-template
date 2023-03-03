@@ -27,6 +27,16 @@ jobs:
           echo "## Commit results" >> $GITHUB_STEP_SUMMARY
           echo "✅ Passed" >> $GITHUB_STEP_SUMMARY
 
+      - name: "Remove `rename.sh` and `create.yml`"
+        run: |
+          rm -rf "./.github/scripts/rename.sh"
+          rm -rf "./.github/workflows/create.yml"
+
+      - name: "Add remove summary"
+        run: |
+          echo "## Remove results" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Passed" >> $GITHUB_STEP_SUMMARY
+
       - name: "Update commit"
         uses: "stefanzweifel/git-auto-commit-action@v4"
         with:
