@@ -1,14 +1,14 @@
 name: "Create"
 
-# The workflow will run only when `use this template` is used
+# The workflow will run only when the "Use this template" button is used
 on:
   create:
 
 jobs:
   create:
-    # We will only run this action when the repository isn't the template repository
-    # Reference https://docs.github.com/en/actions/learn-github-actions/contexts
-    # Reference https://docs.github.com/en/actions/learn-github-actions/expressions
+    # We only run this action when the repository isn't the template repository. References:
+    # - https://docs.github.com/en/actions/learn-github-actions/contexts
+    # - https://docs.github.com/en/actions/learn-github-actions/expressions
     if: ${{ !github.event.repository.is_template }}
     permissions: "write-all"
     runs-on: "ubuntu-latest"
@@ -24,17 +24,17 @@ jobs:
 
       - name: "Add rename summary"
         run: |
-          echo "## Commit results" >> $GITHUB_STEP_SUMMARY
+          echo "## Commit result" >> $GITHUB_STEP_SUMMARY
           echo "✅ Passed" >> $GITHUB_STEP_SUMMARY
 
       - name: "Remove `rename.sh` and `create.yml`"
         run: |
-          rm -rf "./.github/scripts/rename.sh"
-          rm -rf "./.github/workflows/create.yml"
+          rm -f "./.github/scripts/rename.sh"
+          rm -f "./.github/workflows/create.yml"
 
       - name: "Add remove summary"
         run: |
-          echo "## Remove results" >> $GITHUB_STEP_SUMMARY
+          echo "## Remove result" >> $GITHUB_STEP_SUMMARY
           echo "✅ Passed" >> $GITHUB_STEP_SUMMARY
 
       - name: "Update commit"
@@ -47,5 +47,5 @@ jobs:
 
       - name: "Add commit summary"
         run: |
-          echo "## Commit results" >> $GITHUB_STEP_SUMMARY
+          echo "## Commit result" >> $GITHUB_STEP_SUMMARY
           echo "✅ Passed" >> $GITHUB_STEP_SUMMARY
