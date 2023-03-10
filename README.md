@@ -31,7 +31,7 @@ Or, if you prefer to install the template manually:
 ```sh
 forge init my-project --template https://github.com/PaulRBerg/foundry-template
 cd my-project
-yarn install # install Solhint, Prettier, and other Node.js deps
+pnpm install # install Solhint, Prettier, and other Node.js deps
 ```
 
 If this is your first time with Foundry, check out the
@@ -57,7 +57,6 @@ following files:
 ├── .prettierignore
 ├── .prettierrc.yml
 ├── .solhint.json
-├── .yarnrc.yml
 ├── foundry.toml
 └── remappings.txt
 ```
@@ -157,7 +156,7 @@ $ forge test --gas-report
 Lint the contracts:
 
 ```sh
-$ yarn lint
+$ pnpm lint
 ```
 
 ### Test

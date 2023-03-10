@@ -1,10 +1,4 @@
 # directories
-.yarn/*
-!.yarn/patches
-!.yarn/releases
-!.yarn/plugins
-!.yarn/sdks
-!.yarn/versions
 **/cache
 **/node_modules
 **/out
@@ -15,8 +9,7 @@
 .DS_Store
 .pnp.*
 lcov.info
-yarn-debug.log*
-yarn-error.log*
+yarn.lock
 
 # broadcasts
 !/broadcast
