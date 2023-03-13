@@ -1,7 +1,7 @@
 # directories
-**/cache
-**/node_modules
-**/out
+cache
+node_modules
+out
 
 # files
 *.env
@@ -12,6 +12,6 @@ lcov.info
 yarn.lock
 
 # broadcasts
-!/broadcast
-/broadcast/*
-/broadcast/*/31337/
+!broadcast
+broadcast/*
+broadcast/*/31337/
