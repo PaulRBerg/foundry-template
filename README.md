@@ -184,4 +184,4 @@ $ forge test
 
 ## License
 
-[MIT](./LICENSE.md) © Paul Razvan Berg
+This project is licensed under MIT.
