@@ -39,7 +39,7 @@ contract FooTest is PRBTest, StdCheats {
         }
 
         // Run the test normally, otherwise.
-        vm.createSelectFork({ urlOrAlias: "ethereum", blockNumber: 16_428_000 });
+        vm.createSelectFork({ urlOrAlias: "mainnet", blockNumber: 16_428_000 });
         address usdc = 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48;
         address holder = 0x7713974908Be4BEd47172370115e8b1219F4A5f0;
         uint256 actualBalance = IERC20(usdc).balanceOf(holder);
