@@ -13,7 +13,7 @@ interface IERC20 {
 /// https://book.getfoundry.sh/forge/writing-tests
 contract FooTest is PRBTest, StdCheats {
     /// @dev An optional function invoked before each test case is run
-    function setUp() public {
+    function setUp() public virtual {
         // solhint-disable-previous-line no-empty-blocks
     }
 
