@@ -22,7 +22,7 @@
 
 [etherscan]
   arbitrum = { key = "${API_KEY_ARBISCAN}" }
-  avalanche = { key = "${API_KEY_SNOWTRACE" }
+  avalanche = { key = "${API_KEY_SNOWTRACE}" }
   bsc = { key = "${API_KEY_BSCSCAN}" }
   goerli = { key = "${API_KEY_ETHERSCAN}" }
   mainnet = { key = "${API_KEY_ETHERSCAN}" }
