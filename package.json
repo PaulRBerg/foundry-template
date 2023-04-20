@@ -4,10 +4,10 @@
   "version": "1.0.0",
   "author": {
     "name": "Paul Razvan Berg",
-    "url": "https://github.com/paulrberg"
+    "url": "https://github.com/PaulRBerg"
   },
   "devDependencies": {
-    "prettier": "^2.8.4",
+    "prettier": "^2.8.7",
     "solhint": "^3.4.0"
   },
   "keywords": [
