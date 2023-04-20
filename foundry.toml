@@ -24,6 +24,7 @@
   arbitrum_one = { key = "${API_KEY_ARBISCAN}" }
   avalanche = { key = "${API_KEY_SNOWTRACE}" }
   bnb_smart_chain = { key = "${API_KEY_BSCSCAN}" }
+  gnosis_chain = { key = "${API_KEY_GNOSISSCAN}" }
   goerli = { key = "${API_KEY_ETHERSCAN}" }
   mainnet = { key = "${API_KEY_ETHERSCAN}" }
   optimism = { key = "${API_KEY_OPTIMISTIC_ETHERSCAN}" }
@@ -44,6 +45,7 @@
   arbitrum_one = "https://arbitrum-mainnet.infura.io/v3/${API_KEY_INFURA}"
   avalanche = "https://avalanche-mainnet.infura.io/v3/${API_KEY_INFURA}"
   bnb_smart_chain = "https://bsc-dataseed.binance.org"
+  gnosis_chain = "https://rpc.gnosischain.com"
   goerli = "https://goerli.infura.io/v3/${API_KEY_INFURA}"
   localhost = "http://localhost:8545"
   mainnet = "https://eth-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}"
