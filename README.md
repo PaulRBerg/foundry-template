@@ -126,7 +126,7 @@ $ forge coverage
 Deploy to Anvil:
 
 ```sh
-$ forge script script/DeployFoo.s.sol --broadcast --fork-url http://localhost:8545
+$ forge script script/Deploy.s.sol --broadcast --fork-url http://localhost:8545
 ```
 
 For this script to work, you need to have a `MNEMONIC` environment variable set to a valid
