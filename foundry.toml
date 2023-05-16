@@ -20,6 +20,12 @@
   fuzz = { runs = 10_000 }
   verbosity = 4
 
+[profile.default.invariant]
+  call_override = false # Override unsafe external calls to perform reentrancy checks
+  depth = 10            # Number of calls executed in one run
+  fail_on_revert = true
+  runs = 1
+
 [etherscan]
   arbitrum_one = { key = "${API_KEY_ARBISCAN}" }
   avalanche = { key = "${API_KEY_SNOWTRACE}" }
