@@ -5,30 +5,36 @@ import { PRBTest } from "@prb/test/PRBTest.sol";
 import { console2 } from "forge-std/console2.sol";
 import { StdCheats } from "forge-std/StdCheats.sol";
 
+import { Foo } from "../src/Foo.sol";
+
 interface IERC20 {
     function balanceOf(address account) external view returns (uint256);
 }
 
-/// @dev If this is your first time with Forge, see the "Writing Tests" tutorial in the Foundry Book.
+/// @dev If this is your first time with Forge, read this tutorial in the Foundry Book:
 /// https://book.getfoundry.sh/forge/writing-tests
 contract FooTest is PRBTest, StdCheats {
+    // Instantiate the contract-under-test
+    Foo internal foo = new Foo();
+
     /// @dev An optional function invoked before each test case is run.
     function setUp() public virtual {
         // solhint-disable-previous-line no-empty-blocks
     }
 
-    /// @dev Basic test. Run it with `-vvv` to see the console log.
+    /// @dev Basic test. Run it with `forge test -vvv` to see the console log.
     function test_Example() external {
         console2.log("Hello World");
-        assertTrue(true);
+        uint256 x = 42;
+        assertEq(foo.id(x), x, "value mismatch");
     }
 
-    /// @dev Fuzz test that provides random values for an unsigned integer, but it rejects zero as an input.
-    /// If you need more sophisticated input validation, use the `bound` utility instead.
+    /// @dev Fuzz test that provides random values for an unsigned integer, but which rejects zero as an input.
+    /// If you need more sophisticated input validation, you should use the `bound` utility instead.
     /// See https://twitter.com/PaulRBerg/status/1622558791685242880
     function testFuzz_Example(uint256 x) external {
         vm.assume(x != 0); // or x = bound(x, 1, 100)
-        assertGt(x, 0);
+        assertEq(foo.id(x), x, "value mismatch");
     }
 
     /// @dev Fork test that runs against an Ethereum Mainnet fork. For this to work, you need to set `API_KEY_ALCHEMY`
