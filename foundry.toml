@@ -5,6 +5,7 @@
   block_timestamp = 1_680_220_800 # March 31, 2023 at 00:00 GMT
   bytecode_hash = "none"
   cbor_metadata = false
+  evm_version = "paris"
   fuzz = { runs = 1_000 }
   gas_reports = ["*"]
   libs = ["lib"]
