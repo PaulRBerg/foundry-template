@@ -14,12 +14,12 @@ interface IERC20 {
 /// @dev If this is your first time with Forge, read this tutorial in the Foundry Book:
 /// https://book.getfoundry.sh/forge/writing-tests
 contract FooTest is PRBTest, StdCheats {
-    // Instantiate the contract-under-test
-    Foo internal foo = new Foo();
+    Foo internal foo;
 
-    /// @dev An optional function invoked before each test case is run.
+    /// @dev A function invoked before each test case is run.
     function setUp() public virtual {
-        // solhint-disable-previous-line no-empty-blocks
+        // Instantiate the contract-under-test.
+        foo = new Foo();
     }
 
     /// @dev Basic test. Run it with `forge test -vvv` to see the console log.
