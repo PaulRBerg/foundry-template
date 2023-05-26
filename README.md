@@ -15,11 +15,10 @@ A Foundry-based template for developing Solidity smart contracts, with sensible 
 
 - [Forge](https://github.com/foundry-rs/foundry/blob/master/forge): compile, test, fuzz, format, and deploy smart
   contracts
-- [PRBTest](https://github.com/PaulRBerg/prb-test): modern collection of testing assertions and logging utilities
 - [Forge Std](https://github.com/foundry-rs/forge-std): collection of helpful contracts and cheatcodes for testing
+- [PRBTest](https://github.com/PaulRBerg/prb-test): modern collection of testing assertions and logging utilities
+- [Prettier](https://github.com/prettier/prettier): code formatter for non-Solidity files
 - [Solhint](https://github.com/protofire/solhint): linter for Solidity code
-- [Prettier Plugin Solidity](https://github.com/prettier-solidity/prettier-plugin-solidity): code formatter for
-  non-Solidity files
 
 ## Getting Started
 
