@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "prettier": "^3.0.0",
-    "solhint-community": "^3.5.2"
+    "solhint-community": "^3.6.0"
   },
   "keywords": [
     "blockchain",

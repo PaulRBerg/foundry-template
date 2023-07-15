@@ -9,8 +9,8 @@ devDependencies:
     specifier: ^3.0.0
     version: 3.0.0
   solhint-community:
-    specifier: ^3.5.2
-    version: 3.5.2
+    specifier: ^3.6.0
+    version: 3.6.0
 
 packages:
 
@@ -35,8 +35,8 @@ packages:
       js-tokens: 4.0.0
     dev: true
 
-  /@solidity-parser/parser@0.16.0:
-    resolution: {integrity: sha512-ESipEcHyRHg4Np4SqBCfcXwyxxna1DgFVz69bgpLV8vzl/NP1DtcKsJ4dJZXWQhY/Z4J2LeKBiOkOVZn9ct33Q==}
+  /@solidity-parser/parser@0.16.1:
+    resolution: {integrity: sha512-PdhRFNhbTtu3x8Axm0uYpqOy/lODYQK+MlYSgqIsq2L8SFYEHJPHNUiOTAJbDGzNjjr1/n9AcIayxafR/fWmYw==}
     dependencies:
       antlr4ts: 0.5.0-alpha.4
     dev: true
@@ -357,8 +357,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /semver@6.3.0:
-    resolution: {integrity: sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==}
+  /semver@6.3.1:
+    resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
     hasBin: true
     dev: true
 
@@ -371,11 +371,11 @@ packages:
       is-fullwidth-code-point: 3.0.0
     dev: true
 
-  /solhint-community@3.5.2:
-    resolution: {integrity: sha512-l3lF2n8mF33p266u5atCSqjT9SyyOBD1qaWrQBAXHNk2xAxmi+pEynIVuTIn6FVD3JiuHRgutjKJcngs8Iolbg==}
+  /solhint-community@3.6.0:
+    resolution: {integrity: sha512-3WGi8nB9VSdC7B3xawktFoQkJEgX6rsUe7jWZJteDBdix+tAOGN+2ZhRr7Cyv1s+h5BRLSsNOXoh7Vg9KEeQbg==}
     hasBin: true
     dependencies:
-      '@solidity-parser/parser': 0.16.0
+      '@solidity-parser/parser': 0.16.1
       ajv: 6.12.6
       antlr4: 4.13.0
       ast-parents: 0.0.1
@@ -388,7 +388,7 @@ packages:
       js-yaml: 4.1.0
       lodash: 4.17.21
       pluralize: 8.0.0
-      semver: 6.3.0
+      semver: 6.3.1
       strip-ansi: 6.0.1
       table: 6.8.1
       text-table: 0.2.0
