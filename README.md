@@ -28,9 +28,10 @@ create a new repository with this repo as the initial state.
 Or, if you prefer to install the template manually:
 
 ```sh
-forge init my-project --template https://github.com/PaulRBerg/foundry-template
-cd my-project
-pnpm install # install Solhint, Prettier, and other Node.js deps
+$ mkdir my-project
+$ cd my-project
+$ forge init --template PaulRBerg/foundry-template
+$ pnpm install # install Solhint, Prettier, and other Node.js deps
 ```
 
 If this is your first time with Foundry, check out the
