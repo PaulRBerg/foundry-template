@@ -1,9 +1,7 @@
-# Foundry Template [![Open in Gitpod][gitpod-badge]][gitpod] [![Github Actions][gha-badge]][gha] [![Foundry][foundry-badge]][foundry] [![License: MIT][license-badge]][license]
+# Foundry Template [![Github Actions][gha-badge]][gha] [![Foundry][foundry-badge]][foundry] [![License: MIT][license-badge]][license]
 
-[gitpod]: https://gitpod.io/#https://github.com/PaulRBerg/foundry-template
-[gitpod-badge]: https://img.shields.io/badge/Gitpod-Open%20in%20Gitpod-FFB45B?logo=gitpod
-[gha]: https://github.com/PaulRBerg/foundry-template/actions
-[gha-badge]: https://github.com/PaulRBerg/foundry-template/actions/workflows/ci.yml/badge.svg
+[gha]: https://github.com/vacp2p/foundry-template/actions
+[gha-badge]: https://github.com/vacp2p/foundry-template/actions/workflows/ci.yml/badge.svg
 [foundry]: https://getfoundry.sh/
 [foundry-badge]: https://img.shields.io/badge/Built%20with-Foundry-FFDB1C.svg
 [license]: https://opensource.org/licenses/MIT
@@ -11,18 +9,20 @@
 
 A Foundry-based template for developing Solidity smart contracts, with sensible defaults.
 
+This is a fork of [PaulRBerg's template](https://github.com/PaulRBerg/foundry-template) and adjusted to Vac's smart
+contracts unit's needs. See [Upstream differences](#upstream-differences) to learn more about how this template differs
+from Paul's.
+
 ## What's Inside
 
 - [Forge](https://github.com/foundry-rs/foundry/blob/master/forge): compile, test, fuzz, format, and deploy smart
   contracts
 - [Forge Std](https://github.com/foundry-rs/forge-std): collection of helpful contracts and cheatcodes for testing
-- [PRBTest](https://github.com/PaulRBerg/prb-test): modern collection of testing assertions and logging utilities
-- [Prettier](https://github.com/prettier/prettier): code formatter for non-Solidity files
 - [Solhint Community](https://github.com/solhint-community/solhint-community): linter for Solidity code
 
 ## Getting Started
 
-Click the [`Use this template`](https://github.com/PaulRBerg/foundry-template/generate) button at the top of the page to
+Click the [`Use this template`](https://github.com/vacp2p/foundry-template/generate) button at the top of the page to
 create a new repository with this repo as the initial state.
 
 Or, if you prefer to install the template manually:
@@ -30,7 +30,7 @@ Or, if you prefer to install the template manually:
 ```sh
 $ mkdir my-project
 $ cd my-project
-$ forge init --template PaulRBerg/foundry-template
+$ forge init --template vacp2p/foundry-template
 $ pnpm install # install Solhint, Prettier, and other Node.js deps
 ```
 
@@ -45,6 +45,15 @@ please consult their respective documentation.
 For example, if you're interested in exploring Foundry in more detail, you should look at the
 [Foundry Book](https://book.getfoundry.sh/). In particular, you may be interested in reading the
 [Writing Tests](https://book.getfoundry.sh/forge/writing-tests.html) tutorial.
+
+### Upstream differences
+
+As mentioned above, this template is a fork with adjustments specific to the needs of Vac's smart contract service unit.
+These differences are:
+
+- Removal of [PRBTest](https://github.com/PaulRBerg/prb-test) In an attempt to keep dependence on third-party code low,
+  we've decided to remove this library as a standard dependency of every project within Vac. If we do see a need for it,
+  we might bring it back in the future.
 
 ### Sensible Defaults
 
@@ -78,10 +87,8 @@ You can edit the CI script in [.github/workflows/ci.yml](./.github/workflows/ci.
 
 ## Writing Tests
 
-To write a new test contract, you start by importing [PRBTest](https://github.com/PaulRBerg/prb-test) and inherit from
-it in your test contract. PRBTest comes with a pre-instantiated [cheatcodes](https://book.getfoundry.sh/cheatcodes/)
-environment accessible via the `vm` property. If you would like to view the logs in the terminal output you can add the
-`-vvv` flag and use [console.log](https://book.getfoundry.sh/faq?highlight=console.log#how-do-i-use-consolelog).
+If you would like to view the logs in the terminal output you can add the `-vvv` flag and use
+[console.log](https://book.getfoundry.sh/faq?highlight=console.log#how-do-i-use-consolelog).
 
 This template comes with an example test contract [Foo.t.sol](./test/Foo.t.sol)
 

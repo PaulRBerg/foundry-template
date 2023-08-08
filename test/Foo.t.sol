@@ -1,9 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity >=0.8.19 <0.9.0;
 
-import { PRBTest } from "@prb/test/PRBTest.sol";
-import { console2 } from "forge-std/console2.sol";
-import { StdCheats } from "forge-std/StdCheats.sol";
+import { Test, console } from "forge-std/Test.sol";
 
 import { Foo } from "../src/Foo.sol";
 
@@ -13,7 +11,7 @@ interface IERC20 {
 
 /// @dev If this is your first time with Forge, read this tutorial in the Foundry Book:
 /// https://book.getfoundry.sh/forge/writing-tests
-contract FooTest is PRBTest, StdCheats {
+contract FooTest is Test {
     Foo internal foo;
 
     /// @dev A function invoked before each test case is run.
@@ -24,7 +22,7 @@ contract FooTest is PRBTest, StdCheats {
 
     /// @dev Basic test. Run it with `forge test -vvv` to see the console log.
     function test_Example() external {
-        console2.log("Hello World");
+        console.log("Hello World");
         uint256 x = 42;
         assertEq(foo.id(x), x, "value mismatch");
     }
