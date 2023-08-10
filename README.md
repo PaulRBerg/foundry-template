@@ -51,9 +51,11 @@ For example, if you're interested in exploring Foundry in more detail, you shoul
 As mentioned above, this template is a fork with adjustments specific to the needs of Vac's smart contract service unit.
 These differences are:
 
-- Removal of [PRBTest](https://github.com/PaulRBerg/prb-test) In an attempt to keep dependence on third-party code low,
-  we've decided to remove this library as a standard dependency of every project within Vac. If we do see a need for it,
-  we might bring it back in the future.
+- **Removal of [PRBTest](https://github.com/PaulRBerg/prb-test)** - In an attempt to keep dependence on third-party code
+  low, we've decided to remove this library as a standard dependency of every project within Vac. If we do see a need
+  for it, we might bring it back in the future.
+- \*\*`PROPERTIES.md` - For invariant testing and formal verification, we've introduced a `PROPERTIES.md` to document
+  all protocol properties that must hold true.
 
 ### Sensible Defaults
 
