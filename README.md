@@ -69,7 +69,8 @@ following files:
 ├── .prettierrc.yml
 ├── .solhint.json
 ├── foundry.toml
-└── remappings.txt
+├── remappings.txt
+└── slither.config.json
 ```
 
 ### VSCode Integration
