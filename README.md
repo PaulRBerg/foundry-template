@@ -167,6 +167,19 @@ Run the tests:
 $ forge test
 ```
 
+Generate test coverage and output result to the terminal:
+
+```sh
+$ pnpm test:coverage
+```
+
+Generate test coverage with lcov report(you'll have to open the ./coverage/index.html file in your browser, to do so simply copy paste the path):
+
+```sh
+$ pnpm test:coverage:report
+```
+
+
 ## Notes
 
 1. Foundry uses [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to manage dependencies. For

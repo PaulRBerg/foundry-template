@@ -1,5 +1,6 @@
 # directories
 cache
+coverage
 node_modules
 out
 
