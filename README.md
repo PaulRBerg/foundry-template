@@ -173,12 +173,12 @@ Generate test coverage and output result to the terminal:
 $ pnpm test:coverage
 ```
 
-Generate test coverage with lcov report(you'll have to open the ./coverage/index.html file in your browser, to do so simply copy paste the path):
+Generate test coverage with lcov report (you'll have to open the `./coverage/index.html` file in your browser, to do so
+simply copy paste the path):
 
 ```sh
 $ pnpm test:coverage:report
 ```
-
 
 ## Notes
 
