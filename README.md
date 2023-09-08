@@ -54,8 +54,8 @@ These differences are:
 - **Removal of [PRBTest](https://github.com/PaulRBerg/prb-test)** - In an attempt to keep dependence on third-party code
   low, we've decided to remove this library as a standard dependency of every project within Vac. If we do see a need
   for it, we might bring it back in the future.
-- \*\*`PROPERTIES.md` - For invariant testing and formal verification, we've introduced a `PROPERTIES.md` to document
-  all protocol properties that must hold true.
+- **PROPERTIES.md** - For invariant testing and formal verification, we've introduced a `PROPERTIES.md` to document all
+  protocol properties that must hold true.
 
 ### Sensible Defaults
 
@@ -168,6 +168,10 @@ Lint the contracts:
 ```sh
 $ pnpm lint
 ```
+
+#### Fixing linting issues
+
+For any errors in solidity files, run `forge fmt`. For errors in any other file type, run `pnpm prettier:write`.
 
 ### Test
 
