@@ -8,5 +8,5 @@ Ensure you completed **all of the steps** below before submitting your pull requ
 
 - [ ] Added natspec comments?
 - [ ] Ran `forge snapshot`?
-- [ ] Ran `yarn lint`?
+- [ ] Ran `pnpm lint`?
 - [ ] Ran `forge test`?
