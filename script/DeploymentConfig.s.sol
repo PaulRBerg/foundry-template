@@ -17,13 +17,13 @@ contract DeploymentConfig is Script {
     address private deployer;
 
     constructor(address _broadcaster) {
+        if (_broadcaster == address(0)) revert DeploymentConfig_InvalidDeployerAddress();
+        deployer = _broadcaster;
         if (block.chainid == 31_337) {
             activeNetworkConfig = getOrCreateAnvilEthConfig();
         } else {
             revert DeploymentConfig_NoConfigForChain(block.chainid);
         }
-        if (_broadcaster == address(0)) revert DeploymentConfig_InvalidDeployerAddress();
-        deployer = _broadcaster;
     }
 
     function getOrCreateAnvilEthConfig() public view returns (NetworkConfig memory) {
