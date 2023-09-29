@@ -7,8 +7,7 @@
     "url": "https://github.com/PaulRBerg"
   },
   "devDependencies": {
-    "prettier": "^3.0.0",
-    "solhint-community": "^3.6.0"
+    "prettier": "^3.0.0"
   },
   "keywords": [
     "blockchain",
@@ -30,5 +29,8 @@
     "test": "forge test",
     "test:coverage": "forge coverage",
     "test:coverage:report": "forge coverage --report lcov && genhtml lcov.info --branch-coverage --output-dir coverage"
+  },
+  "dependencies": {
+    "solhint": "^3.6.2"
   }
 }
