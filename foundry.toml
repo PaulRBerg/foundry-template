@@ -1,4 +1,4 @@
-# Full reference https://github.com/foundry-rs/foundry/tree/master/config
+# Full reference https://github.com/foundry-rs/foundry/tree/master/crates/config
 
 [profile.default]
   auto_detect_solc = false
