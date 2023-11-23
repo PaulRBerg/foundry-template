@@ -10,3 +10,4 @@ Ensure you completed **all of the steps** below before submitting your pull requ
 - [ ] Ran `forge snapshot`?
 - [ ] Ran `pnpm lint`?
 - [ ] Ran `forge test`?
+- [ ] Ran `pnpm verify`?

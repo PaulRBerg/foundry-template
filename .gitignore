@@ -15,3 +15,5 @@ yarn.lock
 !broadcast
 broadcast/*
 broadcast/*/31337/
+
+.certora_internal
