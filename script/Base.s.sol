@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.8.21 <0.9.0;
 
-import { Script } from "forge-std/Script.sol";
+import { Script } from "forge-std/src/Script.sol";
 
 abstract contract BaseScript is Script {
     /// @dev Included to enable compilation of the script without a $MNEMONIC environment variable.

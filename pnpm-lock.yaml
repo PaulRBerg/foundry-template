@@ -10,6 +10,12 @@ dependencies:
     version: 3.6.2
 
 devDependencies:
+  '@prb/test':
+    specifier: ^0.6.4
+    version: 0.6.4
+  forge-std:
+    specifier: github:foundry-rs/forge-std#v1
+    version: github.com/foundry-rs/forge-std/155d547c449afa8715f538d69454b83944117811
   prettier:
     specifier: ^3.0.0
     version: 3.0.0
@@ -36,6 +42,10 @@ packages:
       chalk: 2.4.2
       js-tokens: 4.0.0
     dev: false
+
+  /@prb/test@0.6.4:
+    resolution: {integrity: sha512-P0tTMsB6XQ0Wp61EYdXJYFhsOVGyZvcOFub2y9yk0sF+GYDusctR7DzEI+vOP0SILm3knFkEJASjewHEBppdRQ==}
+    dev: true
 
   /@solidity-parser/parser@0.16.1:
     resolution: {integrity: sha512-PdhRFNhbTtu3x8Axm0uYpqOy/lODYQK+MlYSgqIsq2L8SFYEHJPHNUiOTAJbDGzNjjr1/n9AcIayxafR/fWmYw==}
@@ -466,3 +476,9 @@ packages:
   /yallist@4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
     dev: false
+
+  github.com/foundry-rs/forge-std/155d547c449afa8715f538d69454b83944117811:
+    resolution: {tarball: https://codeload.github.com/foundry-rs/forge-std/tar.gz/155d547c449afa8715f538d69454b83944117811}
+    name: forge-std
+    version: 1.7.4
+    dev: true
