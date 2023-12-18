@@ -7,7 +7,6 @@
   evm_version = "paris"           # See https://www.evmdiff.com/features?name=PUSH0&kind=opcode
   fuzz = { runs = 1_000 }
   gas_reports = ["*"]
-  libs = ["lib"]
   optimizer = true
   optimizer_runs = 10_000
   out = "out"
