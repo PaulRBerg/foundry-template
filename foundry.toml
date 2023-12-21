@@ -22,7 +22,7 @@
   verbosity = 4
 
 [etherscan]
-  arbitrum_one = { key = "${API_KEY_ARBISCAN}" }
+  arbitrum = { key = "${API_KEY_ARBISCAN}" }
   avalanche = { key = "${API_KEY_SNOWTRACE}" }
   bnb_smart_chain = { key = "${API_KEY_BSCSCAN}" }
   gnosis_chain = { key = "${API_KEY_GNOSISSCAN}" }
@@ -43,7 +43,7 @@
   wrap_comments = true
 
 [rpc_endpoints]
-  arbitrum_one = "https://arbitrum-mainnet.infura.io/v3/${API_KEY_INFURA}"
+  arbitrum = "https://arbitrum-mainnet.infura.io/v3/${API_KEY_INFURA}"
   avalanche = "https://avalanche-mainnet.infura.io/v3/${API_KEY_INFURA}"
   bnb_smart_chain = "https://bsc-dataseed.binance.org"
   gnosis_chain = "https://rpc.gnosischain.com"
