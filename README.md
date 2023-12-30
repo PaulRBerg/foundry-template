@@ -39,8 +39,8 @@ If this is your first time with Foundry, check out the
 
 ## Features
 
-This template builds upon the frameworks and libraries mentioned above, so for details about their specific features,
-please consult their respective documentation.
+This template builds upon the frameworks and libraries mentioned above, so please consult their respective documentation
+for details about their specific features.
 
 For example, if you're interested in exploring Foundry in more detail, you should look at the
 [Foundry Book](https://book.getfoundry.sh/). In particular, you may be interested in reading the
@@ -75,6 +75,20 @@ This template comes with GitHub Actions pre-configured. Your contracts will be l
 request made to the `main` branch.
 
 You can edit the CI script in [.github/workflows/ci.yml](./.github/workflows/ci.yml).
+
+## Installing Dependencies
+
+Foundry typically uses git submodules to manage dependencies, but this template uses Node.js packages because
+[submodules don't scale](https://twitter.com/PaulRBerg/status/1736695487057531328).
+
+This is how to install dependencies:
+
+1. Install the dependency using your preferred package manager, e.g. `pnpm add dependency-name`
+   - Use this syntax to install from GitHub: `pnpm add github:username/repo-name`
+2. Add a remapping for the dependency in [remappings.txt](./remappings.txt), e.g.
+   `dependency-name=node_modules/dependency-name`
+
+Note that OpenZeppelin Contracts is pre-installed, so you can follow that as an example.
 
 ## Writing Tests
 
@@ -179,14 +193,6 @@ simply copy paste the path):
 ```sh
 $ pnpm test:coverage:report
 ```
-
-## Notes
-
-1. Foundry uses [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to manage dependencies. For
-   detailed instructions on working with dependencies, please refer to the
-   [guide](https://book.getfoundry.sh/projects/dependencies.html) in the book
-2. You don't have to create a `.env` file, but filling in the environment variables may be useful when debugging and
-   testing against a fork.
 
 ## Related Efforts
 

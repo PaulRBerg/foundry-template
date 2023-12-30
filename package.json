@@ -6,10 +6,14 @@
     "name": "Paul Razvan Berg",
     "url": "https://github.com/PaulRBerg"
   },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.1"
+  },
   "devDependencies": {
     "@prb/test": "^0.6.4",
     "forge-std": "github:foundry-rs/forge-std#v1",
-    "prettier": "^3.0.0"
+    "prettier": "^3.0.0",
+    "solhint": "^3.6.2"
   },
   "keywords": [
     "blockchain",
@@ -31,8 +35,5 @@
     "test": "forge test",
     "test:coverage": "forge coverage",
     "test:coverage:report": "forge coverage --report lcov && genhtml lcov.info --branch-coverage --output-dir coverage"
-  },
-  "dependencies": {
-    "solhint": "^3.6.2"
   }
 }
