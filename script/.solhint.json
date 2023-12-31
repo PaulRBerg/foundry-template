@@ -1,0 +1,7 @@
+{
+  "rules": {
+    "func-name-mixedcase": "off",
+    "no-console": "off",
+    "one-contract-per-file": "off"
+  }
+}

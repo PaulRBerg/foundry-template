@@ -33,6 +33,6 @@
     "test:coverage:report": "forge coverage --report lcov && genhtml lcov.info --branch-coverage --output-dir coverage"
   },
   "dependencies": {
-    "solhint": "^3.6.2"
+    "solhint-community": "^4.0.0-rc00"
   }
 }

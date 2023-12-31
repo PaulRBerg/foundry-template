@@ -5,9 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  solhint:
-    specifier: ^3.6.2
-    version: 3.6.2
+  solhint-community:
+    specifier: ^4.0.0-rc00
+    version: 4.0.0-rc00
 
 devDependencies:
   '@prb/test':
@@ -165,9 +165,9 @@ packages:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
     dev: false
 
-  /commander@10.0.1:
-    resolution: {integrity: sha512-y4Mg2tXshplEbSGzx7amzPwKKOCGuoSRP/CjEdwwk0FOGlUbq6lKuoyDZTNZkmxHdJtp54hdfY/JUrdL7Xfdug==}
-    engines: {node: '>=14'}
+  /commander@11.1.0:
+    resolution: {integrity: sha512-yPVavfyCcRhmorC7rWlkHn15b4wDVgVmBA7kV4QVBsF7kv/9TKJAbAXVTxvTnwP8HHKjRCJDClKbciiYS7p0DQ==}
+    engines: {node: '>=16'}
     dev: false
 
   /cosmiconfig@8.2.0:
@@ -300,13 +300,6 @@ packages:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
     dev: false
 
-  /lru-cache@6.0.0:
-    resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
-    engines: {node: '>=10'}
-    dependencies:
-      yallist: 4.0.0
-    dev: false
-
   /minimatch@5.1.6:
     resolution: {integrity: sha512-lKwV/1brpG6mBUFHtb7NUmtABCb2WZZmm2wNiOA5hAb8VdCS4B3dtMWyvcoViccwAW/COERjXLt0zP1zXUN26g==}
     engines: {node: '>=10'}
@@ -376,12 +369,9 @@ packages:
     engines: {node: '>=4'}
     dev: false
 
-  /semver@7.5.4:
-    resolution: {integrity: sha512-1bCSESV6Pv+i21Hvpxp3Dx+pSD8lIPt8uVjRrxAUt/nbswYc+tK6Y2btiULjd4+fnq15PX+nqQDC7Oft7WkwcA==}
-    engines: {node: '>=10'}
+  /semver@6.3.1:
+    resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
     hasBin: true
-    dependencies:
-      lru-cache: 6.0.0
     dev: false
 
   /slice-ansi@4.0.0:
@@ -393,8 +383,8 @@ packages:
       is-fullwidth-code-point: 3.0.0
     dev: false
 
-  /solhint@3.6.2:
-    resolution: {integrity: sha512-85EeLbmkcPwD+3JR7aEMKsVC9YrRSxd4qkXuMzrlf7+z2Eqdfm1wHWq1ffTuo5aDhoZxp2I9yF3QkxZOxOL7aQ==}
+  /solhint-community@4.0.0-rc00:
+    resolution: {integrity: sha512-SuwAlJ1S9PWKtAaRuji8x6dFrZYSFTXXNW45m6n9A2ZTmR71FlmwmFWnYZ1iIylxDBSkgO8qhDUEtK74JsOwJg==}
     hasBin: true
     dependencies:
       '@solidity-parser/parser': 0.16.1
@@ -402,7 +392,7 @@ packages:
       antlr4: 4.13.0
       ast-parents: 0.0.1
       chalk: 4.1.2
-      commander: 10.0.1
+      commander: 11.1.0
       cosmiconfig: 8.2.0
       fast-diff: 1.3.0
       glob: 8.1.0
@@ -410,7 +400,7 @@ packages:
       js-yaml: 4.1.0
       lodash: 4.17.21
       pluralize: 8.0.0
-      semver: 7.5.4
+      semver: 6.3.1
       strip-ansi: 6.0.1
       table: 6.8.1
       text-table: 0.2.0
@@ -471,10 +461,6 @@ packages:
 
   /wrappy@1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
-    dev: false
-
-  /yallist@4.0.0:
-    resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
     dev: false
 
   github.com/foundry-rs/forge-std/155d547c449afa8715f538d69454b83944117811:
