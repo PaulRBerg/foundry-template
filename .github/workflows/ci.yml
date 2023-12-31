@@ -21,11 +21,6 @@ jobs:
       - name: "Install Foundry"
         uses: "foundry-rs/foundry-toolchain@v1"
 
-      - name: "Install Node.js"
-        uses: "actions/setup-node@v3"
-        with:
-          node-version: "lts/*"
-
       - name: "Install Bun"
         uses: "oven-sh/setup-bun@v1"
 
@@ -48,11 +43,6 @@ jobs:
 
       - name: "Install Foundry"
         uses: "foundry-rs/foundry-toolchain@v1"
-
-      - name: "Install Node.js"
-        uses: "actions/setup-node@v3"
-        with:
-          node-version: "lts/*"
 
       - name: "Install Bun"
         uses: "oven-sh/setup-bun@v1"
@@ -77,11 +67,6 @@ jobs:
 
       - name: "Install Foundry"
         uses: "foundry-rs/foundry-toolchain@v1"
-
-      - name: "Install Node.js"
-        uses: "actions/setup-node@v3"
-        with:
-          node-version: "lts/*"
 
       - name: "Install Bun"
         uses: "oven-sh/setup-bun@v1"
