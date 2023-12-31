@@ -31,7 +31,7 @@ Or, if you prefer to install the template manually:
 $ mkdir my-project
 $ cd my-project
 $ forge init --template PaulRBerg/foundry-template
-$ pnpm install # install Solhint, Prettier, and other Node.js deps
+$ bun install # install Solhint, Prettier, and other Node.js deps
 ```
 
 If this is your first time with Foundry, check out the
@@ -83,8 +83,8 @@ Foundry typically uses git submodules to manage dependencies, but this template 
 
 This is how to install dependencies:
 
-1. Install the dependency using your preferred package manager, e.g. `pnpm add dependency-name`
-   - Use this syntax to install from GitHub: `pnpm add github:username/repo-name`
+1. Install the dependency using your preferred package manager, e.g. `bun install dependency-name`
+   - Use this syntax to install from GitHub: `bun install github:username/repo-name`
 2. Add a remapping for the dependency in [remappings.txt](./remappings.txt), e.g.
    `dependency-name=node_modules/dependency-name`
 
@@ -170,7 +170,7 @@ $ forge test --gas-report
 Lint the contracts:
 
 ```sh
-$ pnpm lint
+$ bun run lint
 ```
 
 ### Test
@@ -184,14 +184,14 @@ $ forge test
 Generate test coverage and output result to the terminal:
 
 ```sh
-$ pnpm test:coverage
+$ bun run test:coverage
 ```
 
 Generate test coverage with lcov report (you'll have to open the `./coverage/index.html` file in your browser, to do so
 simply copy paste the path):
 
 ```sh
-$ pnpm test:coverage:report
+$ bun run test:coverage:report
 ```
 
 ## Related Efforts
