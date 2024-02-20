@@ -2,6 +2,8 @@ name: Add PR task board
 
 on:
   pull_request:
+    types:
+      - opened
 
 jobs:
   add-to-project:
