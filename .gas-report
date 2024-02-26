@@ -1,0 +1,18 @@
+| script/Deploy.s.sol:Deploy contract |                 |        |        |        |         |
+|-------------------------------------|-----------------|--------|--------|--------|---------|
+| Deployment Cost                     | Deployment Size |        |        |        |         |
+| 320782                              | 2729            |        |        |        |         |
+| Function Name                       | min             | avg    | median | max    | # calls |
+| run                                 | 221942          | 221942 | 221942 | 221942 | 1       |
+
+
+| src/Foo.sol:Foo contract |                 |     |        |     |         |
+|--------------------------|-----------------|-----|--------|-----|---------|
+| Deployment Cost          | Deployment Size |     |        |     |         |
+| 20275                    | 131             |     |        |     |         |
+| Function Name            | min             | avg | median | max | # calls |
+| id                       | 235             | 235 | 235    | 235 | 1       |
+
+
+
+
