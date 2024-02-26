@@ -7,8 +7,5 @@ Describe the changes made in your pull request here.
 Ensure you completed **all of the steps** below before submitting your pull request:
 
 - [ ] Added natspec comments?
-- [ ] Ran `forge snapshot`?
-- [ ] Ran `pnpm gas-report`?
-- [ ] Ran `pnpm lint`?
-- [ ] Ran `forge test`?
+- [ ] Ran `pnpm prepare`?
 - [ ] Ran `pnpm verify`?
