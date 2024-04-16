@@ -10,8 +10,7 @@
     "@openzeppelin/contracts": "^5.0.1"
   },
   "devDependencies": {
-    "@prb/test": "^0.6.4",
-    "forge-std": "github:foundry-rs/forge-std#v1.7.5",
+    "forge-std": "github:foundry-rs/forge-std#v1.8.1",
     "prettier": "^3.0.0",
     "solhint": "^3.6.2"
   },
