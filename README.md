@@ -25,7 +25,7 @@ Or, if you prefer to install the template manually:
 $ mkdir my-project
 $ cd my-project
 $ forge init --template PaulRBerg/foundry-template
-$ bun install # install Solhint, Prettier, and other Node.js deps
+$ make set-up # install Solhint, Prettier, and other Node.js deps
 ```
 
 If this is your first time with Foundry, check out the
