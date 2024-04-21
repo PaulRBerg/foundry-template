@@ -1,0 +1,3 @@
+set-up :
+	npm i solhint
+	npm i prettier
