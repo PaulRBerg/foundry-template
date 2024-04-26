@@ -1,11 +1,12 @@
 # Foundry Template (Opinonated) [![Foundry][foundry-badge]][foundry] [![License: MIT][license-badge]][license]
+
 [foundry]: https://getfoundry.sh/
 [foundry-badge]: https://img.shields.io/badge/Built%20with-Foundry-FFDB1C.svg
 [license]: https://opensource.org/licenses/MIT
 [license-badge]: https://img.shields.io/badge/License-MIT-blue.svg
 
-A Foundry-based template for developing Solidity smart contracts, with sensible defaults.
-(Moded)
+A Foundry-based template for developing Solidity smart contracts, with sensible defaults. (Moded)
+
 ## What's Inside
 
 - [Forge](https://github.com/foundry-rs/foundry/blob/master/forge): compile, test, fuzz, format, and deploy smart
@@ -21,11 +22,15 @@ create a new repository with this repo as the initial state.
 
 Or, if you prefer to install the template manually:
 
-```sh
-$ mkdir my-project
-$ cd my-project
-$ forge init --template PaulRBerg/foundry-template
-$ make set-up # install Solhint, Prettier, and other Node.js deps
+```zsh
+mkdir my-project
+cd my-project
+# Otorgar permisos de ejecución al archivo
+chmod +x setup.sh
+./setup.sh 
+# Ejecutar el setup
+chmod -x setup.sh 
+# Después de ejecutar el script, revertir los permisos
 ```
 
 If this is your first time with Foundry, check out the
