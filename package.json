@@ -1,16 +1,12 @@
 {
-  "name": "@prb/foundry-template",
-  "description": "Foundry-based template for developing Solidity smart contracts",
+  "name": "@dzkita/forge-opinionated",
+  "description": "Forge pero a mi manera pa",
   "version": "1.0.0",
   "author": {
-    "name": "Paul Razvan Berg",
-    "url": "https://github.com/PaulRBerg"
-  },
-  "dependencies": {
-    "@openzeppelin/contracts": "^5.0.1"
+    "name": "dzkita",
+    "url": "https://github.com/dzkita"
   },
   "devDependencies": {
-    "forge-std": "github:foundry-rs/forge-std#v1.8.1",
     "prettier": "^3.0.0",
     "solhint": "^3.6.2"
   },
@@ -27,8 +23,8 @@
   "scripts": {
     "clean": "rm -rf cache out",
     "build": "forge build",
-    "lint": "bun run lint:sol && bun run prettier:check",
-    "lint:sol": "forge fmt --check && bun solhint {script,src,test}/**/*.sol",
+    "lint": "npm run lint:sol && npm run prettier:check",
+    "lint:sol": "forge fmt --check && npm solhint {script,src,test}/**/*.sol",
     "prettier:check": "prettier --check \"**/*.{json,md,yml}\" --ignore-path \".prettierignore\"",
     "prettier:write": "prettier --write \"**/*.{json,md,yml}\" --ignore-path \".prettierignore\"",
     "test": "forge test",
