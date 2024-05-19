@@ -23,14 +23,8 @@ create a new repository with this repo as the initial state.
 Or, if you prefer to install the template manually:
 
 ```zsh
-mkdir my-project
-cd my-project
-# Otorgar permisos de ejecución al archivo
-chmod +x setup.sh
-./setup.sh 
-# Ejecutar el setup
-chmod -x setup.sh 
-# Después de ejecutar el script, revertir los permisos
+
+make install // installs forge-std
 ```
 
 If this is your first time with Foundry, check out the
