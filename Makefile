@@ -10,12 +10,15 @@ clean  :; forge clean
 # Remove modules
 remove :; rm -rf .gitmodules && rm -rf .git/modules/* && rm -rf .node_modules && rm -rf lib && touch .gitmodules && git add . && git commit -m "modules"
 
-install-defi :; forge install foundry-rs/forge-std --no-commit && forge install https://github.com/vectorized/solady --no-commit && forge install https://github.com/smartcontractkit/chainlink-brownie-contracts@v1.1.0 --no-commit forge install https://github.com/pyth-network/pyth-sdk-solidity --no-commit
-install-nfts :; forge install foundry-rs/forge-std --no-commit && forge install https://github.com/vectorized/solady --no-commit 
+install: forge install foundry-rs/forge-std --no-commit
+
+
+install-defi :; install && forge install https://github.com/vectorized/solady --no-commit && forge install https://github.com/smartcontractkit/chainlink-brownie-contracts@v1.1.0 --no-commit forge install https://github.com/pyth-network/pyth-sdk-solidity --no-commit
+install-nfts :; install && forge install https://github.com/vectorized/solady --no-commit 
 # TODO armar el de upgradeable
 # TODO ver porque pingo no me funca el make invariant y el make unit ??
-install-upgradeable:; forge install foundry-rs/forge-std --no-commit 
-install-math:; forge install foundry-rs/forge-std --no-commit && forge install --no-commit PaulRBerg/prb-math@release-v4 
+install-upgradeable:; install
+install-math:; install  && forge install --no-commit PaulRBerg/prb-math@release-v4 
 
 # Tests
 coverage-report:; forge coverage --report lcov
