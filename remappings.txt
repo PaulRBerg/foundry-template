@@ -1,2 +1,5 @@
 @openzeppelin/contracts/=node_modules/@openzeppelin/contracts/
 forge-std/=node_modules/forge-std/
+@solady/=src/@solady/
+@interfaces=src/interfaces/
+@libraries=src/libraries/

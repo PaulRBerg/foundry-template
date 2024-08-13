@@ -1,7 +1,6 @@
 name: "CI"
 
 env:
-  API_KEY_ALCHEMY: ${{ secrets.API_KEY_ALCHEMY }}
   FOUNDRY_PROFILE: "ci"
 
 on:
