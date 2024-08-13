@@ -1,0 +1,9 @@
+{
+  "codecov": { "require_ci_to_pass": true, "notify": { "after_n_builds": 1 } },
+  "coverage":
+    { "status": { "project": { "default": { "target": 80.0 } }, "patch": { "default": { "target": 80.0 } } } },
+  "comment": { "layout": "header, diff, files, footer" },
+  "flags": { "foundry": { "paths": ["^contracts/.*"] } },
+  "ignore":
+    ["(?s:scripts/[^\\/]*)\\Z", "(?s:contracts/mocks/[^\\/]*)\\Z", "(?s:test/[^\\/]*)\\Z", "^scripts/.*", "^test/.*"],
+}

@@ -1,0 +1,30 @@
+name: Branch Check
+on: pull_request
+jobs:
+  branch-naming-rules:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: deepakputhraya/action-branch-name@master
+        with:
+          regex: '^(feat|fix|release|chore)\/.+$'
+          ignore: master,main,dev
+  check-branch-flow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if branch name is valid for dev
+        if: github.base_ref == 'dev' && github.head_ref != 'main'
+        run: echo "Branch ${{ github.head_ref }} can be merged into dev."
+
+      - name: Check if branch name is valid for main
+        if: github.base_ref == 'main'
+        run: |
+          if [[ ! "${{ github.head_ref }}" =~ ^(fix/|release/) ]]; then
+            echo "ERROR: Only branches prefixed with 'fix/' or 'release/' can be merged into main."
+            exit 1
+          fi
+
+      - name: Prevent merging main into dev
+        if: github.base_ref == 'dev' && github.head_ref == 'main'
+        run: |
+          echo "ERROR: Direct merges from main into dev are not allowed."
+          exit 1

@@ -1,0 +1,58 @@
+name: Report gas diff
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    # Optionally configure to run only for changes in specific files. For example:
+    # paths:
+    # - src/**
+    # - test/**
+    # - foundry.toml
+    # - remappings.txt
+    # - .github/workflows/foundry-gas-diff.yml
+
+jobs:
+  compare_gas_reports:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - uses: actions/checkout@v4.1.6
+        with:
+          submodules: recursive
+
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1.2.0
+        with:
+          version: nightly
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      # Add any step generating a gas report to a temporary file named gasreport.ansi. For example:
+      - name: Run tests
+        run: forge test --gas-report --match-test test_Gas > gasreport.ansi # <- this file name should be unique in your repository!
+        env:
+          # make fuzzing semi-deterministic to avoid noisy gas cost estimation
+          # due to non-deterministic fuzzing (but still use pseudo-random fuzzing seeds)
+          FOUNDRY_FUZZ_SEED: 42
+        continue-on-error: true
+
+      - name: Compare gas reports
+        uses: Rubilmax/foundry-gas-diff@v3.16
+        with:
+          summaryQuantile: 0.95 # only display the 5% most significant gas diffs in the summary (defaults to 20%)
+          sortCriteria: avg,max # sort diff rows by criteria
+          sortOrders: desc,asc # and directions
+          ignore: test-foundry/**/* # filter out gas reports from specific paths (test/ is included by default)
+        id: gas_diff
+        continue-on-error: true
+
+      - name: Add gas diff to sticky comment
+        if: github.event_name == 'pull_request' || github.event_name == 'pull_request_target'
+        uses: marocchino/sticky-pull-request-comment@v2.9.0
+        with:
+          # delete the comment in case changes no longer impact gas costs
+          delete: ${{ !steps.gas_diff.outputs.markdown }}
+          message: ${{ steps.gas_diff.outputs.markdown }}

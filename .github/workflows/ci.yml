@@ -11,20 +11,43 @@ on:
       - "main"
 
 jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      cache-key: ${{ steps.cache-keys.outputs.cache-key }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.6
+
+      - name: Get cache key
+        id: cache-keys
+        run: echo "cache-key=${{ runner.os }}-bun-$(sha256sum bun.lockb | cut -d' ' -f1)" >> $GITHUB_ENV
+
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules
+          key: ${{ env.cache-key }}
+
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v1
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
   lint:
-    runs-on: "ubuntu-latest"
+    runs-on: ubuntu-latest
+    needs: setup
     steps:
       - name: "Check out the repo"
         uses: "actions/checkout@v4"
 
-      - name: "Install Foundry"
-        uses: "foundry-rs/foundry-toolchain@v1"
+      - name: Install Bun (reuse setup)
+        uses: oven-sh/setup-bun@v1
 
-      - name: "Install Bun"
-        uses: "oven-sh/setup-bun@v1"
-
-      - name: "Install the Node.js dependencies"
-        run: "bun install"
+      - name: "Install Node.js dependencies (cached)"
+        run: bun install --frozen-lockfile
 
       - name: "Lint the code"
         run: "bun run lint"
@@ -32,7 +55,13 @@ jobs:
       - name: "Add lint summary"
         run: |
           echo "## Lint result" >> $GITHUB_STEP_SUMMARY
-          echo "✅ Passed" >> $GITHUB_STEP_SUMMARY
+          if grep -q "Linting failed" lint_output.txt; then
+            echo "❌ Linting failed" >> $GITHUB_STEP_SUMMARY
+            cat lint_output.txt
+            exit 1
+          else
+            echo "✅ Passed" >> $GITHUB_STEP_SUMMARY
+          fi
 
   build:
     runs-on: "ubuntu-latest"
@@ -89,3 +118,47 @@ jobs:
         run: |
           echo "## Tests result" >> $GITHUB_STEP_SUMMARY
           echo "✅ Passed" >> $GITHUB_STEP_SUMMARY
+
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Slither
+        uses: crytic/slither-action@v0.4.0
+        id: slither
+        with:
+          slither-version: "0.10.0"
+          node-version: "20"
+          fail-on: "none"
+          slither-args:
+            '--exclude
+            "assembly|solc-version|low-level-calls|naming-convention|controlled-delegatecall|write-after-write|divide-before-multiply|incorrect-shift"
+            --exclude-informational --exclude-low --filter-paths "contracts/mock|node_modules" --checklist
+            --markdown-root ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.sha }}/contracts/'
+
+      - name: Check if Slither report is empty
+        id: check_report
+        run: |
+          if [ -z "${{ steps.slither.outputs.stdout }}" ]; then
+            echo "report_empty=true" >> $GITHUB_ENV
+          else
+            echo "report_empty=false" >> $GITHUB_ENV
+          fi
+
+      - name: Create/update checklist as PR comment
+        if: env.report_empty == 'false'
+        uses: actions/github-script@v7.0.1
+        env:
+          REPORT: ${{ steps.slither.outputs.stdout }}
+        with:
+          script: |
+            const script = require('.github/scripts/comment')
+            const header = '# Slither report'
+            const body = process.env.REPORT.trim()
+            if (!body) {
+              console.log("Slither report is empty. No comment will be posted.");
+              return;
+            }
+            await script({ github, context, header, body })

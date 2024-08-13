@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@openzeppelin/contracts": "^5.0.1",
+    "codecov": "^3.8.3",
     "solady": "^0.0.232"
   },
   "devDependencies": {
