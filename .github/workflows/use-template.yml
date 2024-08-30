@@ -1,6 +1,6 @@
 name: "Create"
 
-# The workflow will run only when the "Use this template" button is used
+# The workflow will run when the "Use this template" button is used
 on:
   push:
 
