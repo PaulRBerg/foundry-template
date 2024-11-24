@@ -27,9 +27,7 @@ create a new repository with this repo as the initial state.
 Or, if you prefer to install the template manually:
 
 ```sh
-$ mkdir my-project
-$ cd my-project
-$ forge init --template PaulRBerg/foundry-template
+$ forge init --template PaulRBerg/foundry-template my-project
 $ bun install # install Solhint, Prettier, and other Node.js deps
 ```
 
