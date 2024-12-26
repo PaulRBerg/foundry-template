@@ -15,6 +15,7 @@ A Foundry-based template for developing Solidity smart contracts, with sensible 
 
 - [Forge](https://github.com/foundry-rs/foundry/blob/master/forge): compile, test, fuzz, format, and deploy smart
   contracts
+- [Bun]: Foundry defaults to git submodules, but this template uses Node.js packages for managing dependencies
 - [Forge Std](https://github.com/foundry-rs/forge-std): collection of helpful contracts and utilities for testing
 - [Prettier](https://github.com/prettier/prettier): code formatter for non-Solidity files
 - [Solhint](https://github.com/protofire/solhint): linter for Solidity code
@@ -41,7 +42,7 @@ This template builds upon the frameworks and libraries mentioned above, so pleas
 for details about their specific features.
 
 For example, if you're interested in exploring Foundry in more detail, you should look at the
-[Foundry Book](https://book.getfoundry.sh/). In particular, you may be interested in reading the
+[Foundry Book](https://book.getfoundry.sh). In particular, you may be interested in reading the
 [Writing Tests](https://book.getfoundry.sh/forge/writing-tests.html) tutorial.
 
 ### Sensible Defaults
@@ -194,9 +195,9 @@ $ bun run test:coverage:report
 
 ## Related Efforts
 
+- [foundry-rs/forge-template](https://github.com/foundry-rs/forge-template)
 - [abigger87/femplate](https://github.com/abigger87/femplate)
 - [cleanunicorn/ethereum-smartcontract-template](https://github.com/cleanunicorn/ethereum-smartcontract-template)
-- [foundry-rs/forge-template](https://github.com/foundry-rs/forge-template)
 - [FrankieIsLost/forge-template](https://github.com/FrankieIsLost/forge-template)
 
 ## License
