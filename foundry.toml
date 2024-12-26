@@ -20,16 +20,7 @@
   verbosity = 4
 
 [etherscan]
-  arbitrum = { key = "${API_KEY_ARBISCAN}" }
-  avalanche = { key = "${API_KEY_SNOWTRACE}" }
-  base = { key = "${API_KEY_BASESCAN}" }
-  bnb_smart_chain = { key = "${API_KEY_BSCSCAN}" }
-  gnosis_chain = { key = "${API_KEY_GNOSISSCAN}" }
-  goerli = { key = "${API_KEY_ETHERSCAN}" }
   mainnet = { key = "${API_KEY_ETHERSCAN}" }
-  optimism = { key = "${API_KEY_OPTIMISTIC_ETHERSCAN}" }
-  polygon = { key = "${API_KEY_POLYGONSCAN}" }
-  sepolia = { key = "${API_KEY_ETHERSCAN}" }
 
 [fmt]
   bracket_spacing = true
@@ -42,14 +33,13 @@
   wrap_comments = true
 
 [rpc_endpoints]
-  arbitrum = "https://arbitrum-mainnet.infura.io/v3/${API_KEY_INFURA}"
-  avalanche = "https://avalanche-mainnet.infura.io/v3/${API_KEY_INFURA}"
+  arbitrum = "https://arbitrum-one-rpc.publicnode.com"
+  avalanche = "https://avalanche-c-chain-rpc.publicnode.com"
   base = "https://mainnet.base.org"
   bnb_smart_chain = "https://bsc-dataseed.binance.org"
   gnosis_chain = "https://rpc.gnosischain.com"
-  goerli = "https://goerli.infura.io/v3/${API_KEY_INFURA}"
   localhost = "http://localhost:8545"
   mainnet = "https://eth-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}"
-  optimism = "https://optimism-mainnet.infura.io/v3/${API_KEY_INFURA}"
-  polygon = "https://polygon-mainnet.infura.io/v3/${API_KEY_INFURA}"
-  sepolia = "https://sepolia.infura.io/v3/${API_KEY_INFURA}"
+  optimism = "https://optimism-rpc.publicnode.com"
+  polygon = "https://polygon-bor-rpc.publicnode.com"
+  sepolia = "https://ethereum-sepolia-rpc.publicnode.com"
