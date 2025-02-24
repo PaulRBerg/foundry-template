@@ -180,11 +180,15 @@ Run the tests:
 $ forge test
 ```
 
+### Test Coverage
+
 Generate test coverage and output result to the terminal:
 
 ```sh
 $ bun run test:coverage
 ```
+
+### Test Coverage Report
 
 Generate test coverage with lcov report (you'll have to open the `./coverage/index.html` file in your browser, to do so
 simply copy paste the path):
@@ -192,6 +196,11 @@ simply copy paste the path):
 ```sh
 $ bun run test:coverage:report
 ```
+
+> [!NOTE]
+>
+> This command requires you to have [`lcov`](https://github.com/linux-test-project/lcov) installed on your machine. On
+> macOS, you can install it with Homebrew: `brew install lcov`.
 
 ## Related Efforts
 
