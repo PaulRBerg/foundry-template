@@ -25,7 +25,7 @@ contract FooTest is Test {
     function test_Example() external view {
         console2.log("Hello World");
         uint256 x = 42;
-        assertEq(foo.id(x), x, "value mismatch");
+        assertEq(foo.echo(x), x, "value mismatch");
     }
 
     /// @dev Fuzz test that provides random values for an unsigned integer, but which rejects zero as an input.
@@ -33,7 +33,7 @@ contract FooTest is Test {
     /// See https://twitter.com/PaulRBerg/status/1622558791685242880
     function testFuzz_Example(uint256 x) external view {
         vm.assume(x != 0); // or x = bound(x, 1, 100)
-        assertEq(foo.id(x), x, "value mismatch");
+        assertEq(foo.echo(x), x, "value mismatch");
     }
 
     /// @dev Fork test that runs against an Ethereum Mainnet fork. For this to work, you need to set `API_KEY_ALCHEMY`
