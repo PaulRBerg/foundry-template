@@ -6,7 +6,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "JuanBlanco.solidity",
+        "NomicFoundation.hardhat-solidity",
         "esbenp.prettier-vscode",
         "PraneshASP.vscode-solidity-inspector",
         "tamasfe.even-better-toml"
