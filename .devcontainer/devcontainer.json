@@ -3,6 +3,7 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
+  "postCreateCommand": "bun install",
   "customizations": {
     "vscode": {
       "extensions": [
