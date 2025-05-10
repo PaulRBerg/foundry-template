@@ -1,9 +1,8 @@
 {
-  "name": "foundry-template",
+  "name": "Foundry Template",
   "build": {
     "dockerfile": "Dockerfile"
   },
-  "postCreateCommand": "bun install",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -13,5 +12,6 @@
         "tamasfe.even-better-toml"
       ]
     }
-  }
+  },
+  "postCreateCommand": "bun install"
 }
