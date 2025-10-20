@@ -30,7 +30,7 @@
     "forge-check": "forge fmt --check",
     "forge-write": "forge fmt",
     "lint": "bun run lint:sol && bun run prettier:check",
-    "lint:sol": "forge-check && bun solhint \"{script,src,tests}/**/*.sol\"",
+    "lint:sol": "bun run forge-check && bun solhint \"{script,src,tests}/**/*.sol\"",
     "prettier:check": "prettier --check \"**/*.{json,md,yml}\"",
     "prettier:write": "prettier --write \"**/*.{json,md,yml}\"",
     "test": "forge test"
