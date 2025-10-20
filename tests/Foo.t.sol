@@ -50,7 +50,7 @@ contract FooTest is Test {
         address usdc = 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48;
         address holder = 0x7713974908Be4BEd47172370115e8b1219F4A5f0;
         uint256 actualBalance = IERC20(usdc).balanceOf(holder);
-        uint256 expectedBalance = 196_307_713.810457e6;
+        uint256 expectedBalance = 196_307_713.810_457e6;
         assertEq(actualBalance, expectedBalance);
     }
 }
