@@ -1,6 +1,7 @@
 {
   "name": "@prb/foundry-template",
   "description": "Foundry-based template for developing Solidity smart contracts",
+  "private": true,
   "version": "1.0.0",
   "author": {
     "name": "Paul Razvan Berg",
@@ -23,7 +24,6 @@
     "solidity",
     "template"
   ],
-  "private": true,
   "scripts": {
     "clean": "rm -rf cache out",
     "build": "forge build",
