@@ -30,7 +30,7 @@ jobs:
         run: |
           rm -f "./.github/FUNDING.yml"
           rm -f "./.github/scripts/rename.sh"
-          rm -f "./.github/workflows/create.yml"
+          rm -f "./.github/workflows/use-template.yml"
 
       - name: "Add remove summary"
         run: |
