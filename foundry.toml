@@ -28,6 +28,7 @@
   line_length = 120
   multiline_func_header = "all"
   number_underscore = "thousands"
+  prefer_compact = "none"
   quote_style = "double"
   tab_width = 4
   wrap_comments = true
