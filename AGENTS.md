@@ -45,7 +45,8 @@ and remapped through `remappings.txt` instead of git submodules.
 - **Adding dependencies**: `bun install <pkg>` (or `bun install github:user/repo#tag`), then add
   `name/=node_modules/name/` to `remappings.txt`. Do not use git submodules.
 - **Env vars** (see `.env.example`): `API_KEY_ALCHEMY`, `API_KEY_ETHERSCAN` (mainnet verification only), `MNEMONIC`,
-  `FOUNDRY_PROFILE`; `ETH_FROM` optionally overrides the broadcaster. `API_KEY_INFURA` is a placeholder no config reads.
+  `FOUNDRY_PROFILE`; `ETH_FROM` optionally overrides the broadcaster. `ROUTEMESH_API_KEY` is a placeholder no config
+  reads.
 
 ## Template Bootstrap
 
