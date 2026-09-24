@@ -5,8 +5,9 @@ and remapped through `remappings.txt` instead of git submodules.
 
 ## Toolchain
 
-- `solc` is pinned to `0.8.29` (`auto_detect_solc = false`) with EVM target `shanghai`: Cancun opcodes such as transient
-  storage and `mcopy` are unavailable.
+- `solc` is pinned to `0.8.29` (`auto_detect_solc = false`). The EVM target is unpinned, so it follows the installed
+  Foundry's default (`osaka` as of Foundry 1.8); check the effective value with `forge config | grep evm_version`, and
+  set `evm_version` in `foundry.toml` before deploying to a chain that lacks that hard fork.
 - Pinned versions live in `package.json` (Forge Std, OpenZeppelin Contracts, Prettier, Solhint) and `foundry.toml`
   (compiler, optimizer, fuzz, formatter).
 

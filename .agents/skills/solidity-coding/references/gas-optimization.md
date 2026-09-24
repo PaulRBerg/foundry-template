@@ -44,8 +44,8 @@ showing byte usage. Verify the result with `forge inspect <Contract> storageLayo
 
 ## Transient Storage
 
-EIP-1153 transient storage (`TSTORE`/`TLOAD`, 100 gas each) resets at the end of the transaction. It requires
-`evm_version = "cancun"` or later; check `foundry.toml` first.
+EIP-1153 transient storage (`TSTORE`/`TLOAD`, 100 gas each) resets at the end of the transaction. It requires an EVM
+version of Cancun or later; check the effective value with `forge config | grep evm_version`.
 
 Use it for reentrancy locks, callback context, flash-loan accounting, and other transaction-scoped flags. Prefer, in
 order:

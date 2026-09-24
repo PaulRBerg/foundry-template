@@ -12,9 +12,10 @@ Write Solidity that compiles under the project's pinned toolchain, follows its c
 
 ## Ground Rules
 
-- Read `foundry.toml`, `remappings.txt`, and the nearest `AGENTS.md` before writing code. The pinned `solc` and
-  `evm_version` decide which features exist: transient storage and `mcopy` need `evm_version = "cancun"` or later, and
-  `transient` state variables also need solc 0.8.28 or later.
+- Read `foundry.toml`, `remappings.txt`, and the nearest `AGENTS.md` before writing code. The pinned `solc` and the
+  effective EVM version decide which features exist: transient storage and `mcopy` need Cancun or later, and `transient`
+  state variables also need solc 0.8.28 or later. When `evm_version` is unset, Foundry's default applies; read it with
+  `forge config | grep evm_version`.
 - Treat the defaults below as fallbacks. Existing code and repository instructions win; match the surrounding file when
   they disagree.
 - Let `forge fmt`, Solhint, and Prettier own formatting. Run them instead of hand-formatting.
