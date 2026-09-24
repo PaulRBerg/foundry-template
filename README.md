@@ -15,7 +15,7 @@ Std, OpenZeppelin Contracts, Prettier, and Solhint.
 
 ## What's Inside
 
-- [Forge](https://github.com/foundry-rs/foundry/blob/master/crates/forge): compile, test, fuzz, format, and deploy smart
+- [Forge](https://github.com/foundry-rs/foundry/tree/master/crates/forge): compile, test, fuzz, format, and deploy smart
   contracts
 - [Forge Std](https://github.com/foundry-rs/forge-std): collection of helpful contracts and utilities for testing
 - [Bun](https://bun.sh): manage Foundry dependencies as Node.js packages instead of git submodules
@@ -27,13 +27,13 @@ Std, OpenZeppelin Contracts, Prettier, and Solhint.
 ## Links
 
 - [Use this template](https://github.com/PaulRBerg/foundry-template/generate)
-- [Foundry Book](https://book.getfoundry.sh)
-- [Writing Tests](https://book.getfoundry.sh/forge/writing-tests.html)
+- [Foundry Book](https://getfoundry.sh)
+- [Writing Tests](https://getfoundry.sh/forge/testing)
 
 ## Related Projects
 
 - [foundry-rs/forge-template](https://github.com/foundry-rs/forge-template)
-- [abigger87/femplate](https://github.com/abigger87/femplate)
+- [refcell/femplate](https://github.com/refcell/femplate)
 - [cleanunicorn/ethereum-smartcontract-template](https://github.com/cleanunicorn/ethereum-smartcontract-template)
 - [FrankieIsLost/forge-template](https://github.com/FrankieIsLost/forge-template)
 

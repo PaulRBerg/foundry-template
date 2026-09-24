@@ -3,89 +3,62 @@
 Foundry-based template for developing Solidity smart contracts. Dependencies are managed as Node.js packages (via Bun)
 and remapped through `remappings.txt` instead of git submodules.
 
-## Stack
+## Toolchain
 
-- **Solidity** `0.8.29` (pragma `>=0.8.29`), EVM target `shanghai`, optimizer on (10,000 runs)
-- **Foundry** (`forge`) — compile, test, fuzz, format, deploy
-- **Forge Std** `v1.16.2` — test and scripting framework
-- **OpenZeppelin Contracts** `5.6.1` — pre-installed contract library
-- **Bun** — dependency manager (deps installed as Node.js packages, remapped in `remappings.txt`)
-- **Prettier** `3.5` — formatter for JSON/Markdown/YAML
-- **Solhint** `5.1` — Solidity linter
+- `solc` is pinned to `0.8.29` (`auto_detect_solc = false`) with EVM target `shanghai`: Cancun opcodes such as transient
+  storage and `mcopy` are unavailable.
+- Pinned versions live in `package.json` (Forge Std, OpenZeppelin Contracts, Prettier, Solhint) and `foundry.toml`
+  (compiler, optimizer, fuzz, formatter).
 
 ## Commands
 
-### Forge
-
-- `forge build` — compile contracts
-- `forge build --sizes` — compile and print contract sizes (CI build step)
-- `forge test` — run the test suite
-- `forge test -vvv` — run tests with `console2` logs shown
-- `forge test --gas-report` — run tests with a gas report
-- `forge coverage` — generate a coverage report
-- `forge fmt` — format Solidity
-- `forge fmt --check` — check Solidity formatting without writing
-- `forge clean` — delete `out/` and `cache/`
-- `forge config` — print the resolved Foundry config
-- `forge script script/Deploy.s.sol --broadcast --fork-url http://localhost:8545` — deploy `Foo` to a local node
-  (requires `MNEMONIC` or `ETH_FROM`)
-- `forge script script/DeployBrowser.s.sol --broadcast --fork-url http://localhost:8545 --browser` — deploy `Foo` to a
-  local node (requires you to connect your wallet at localhost:9545)
-
-### Bun scripts (`package.json`)
-
-- `bun install` — install Node.js dependencies (add a matching entry to `remappings.txt` afterward)
-- `bun run build` — `forge build`
-- `bun run test` — `forge test`
-- `bun run clean` — `rm -rf cache out`
-- `bun run forge-check` — `forge fmt --check`
-- `bun run forge-write` — `forge fmt`
-- `bun run solhint-check` — Solhint over `{script,src,tests}/**/*.sol`
-- `bun run prettier:check` — Prettier check over `**/*.{json,md,yml}`
-- `bun run prettier:write` — Prettier write over `**/*.{json,md,yml}`
-- `bun run full-check` — `forge-check` + `solhint-check` + `prettier:check` (the CI lint gate)
-- `bun run full-write` — `forge-write` + `prettier:write` (auto-fix formatting)
-
-## Project Structure
-
-- `src/` — contracts under development (`Foo.sol` is the example)
-- `tests/` — Foundry tests (configured via `test = "tests"` in `foundry.toml`)
-- `script/` — deployment scripts; `Base.s.sol` defines `BaseScript` (broadcaster setup + `broadcast` modifier)
-- `out/`, `cache/` — build artifacts and forge cache (gitignored)
-- `node_modules/` — dependencies, mapped to import paths in `remappings.txt`
-- Config: `foundry.toml`, `remappings.txt`, `.solhint.json`, `.prettierrc.yml`, `.editorconfig`, `.env.example`
+- `bun install` — install dependencies; required before building because `forge-std` lives in `node_modules`.
+- `bun run full-check` — the CI lint gate: `forge fmt --check`, Solhint over `{script,src,tests}/**/*.sol`, and Prettier
+  over `**/*.{json,md,yml}`. `bun run full-write` auto-fixes formatting (Solhint findings need manual fixes).
+- `forge build --sizes` — the CI build step.
+- `FOUNDRY_PROFILE=ci forge test` — reproduce CI's 10,000 fuzz runs and verbosity 4; plain `forge test` uses 1,000.
+- `forge script script/Deploy.s.sol --broadcast --fork-url http://localhost:8545` — deploy `Foo` to a local node with
+  the `BaseScript` broadcaster.
+- `forge script script/DeployBrowser.s.sol --broadcast --fork-url http://localhost:8545 --browser` — deploy through a
+  browser wallet connected at `localhost:9545`.
 
 ## Code Style
 
-- **Solidity** — formatted by `forge fmt` (`[fmt]` in `foundry.toml`): 120-char lines, 4-space indent, double quotes,
-  bracket spacing, long int types (`uint256`, not `uint`), thousands underscores, multiline function headers, wrapped
-  comments.
-- **Solhint** (`.solhint.json`) — extends `solhint:recommended`; compiler `>=0.8.29`; max line length 120; explicit
-  function visibility (constructors exempt); `one-contract-per-file`, `not-rely-on-time`, and `no-console` disabled.
-- **Non-Solidity** — Prettier (`.prettierrc.yml`): `printWidth` 120, `trailingComma: all`, Markdown `proseWrap: always`.
-- **EditorConfig** — LF endings, UTF-8, final newline, trim trailing whitespace; 2-space default, 4-space for `.sol`,
-  1-space for `.tree`.
-- Every file carries an SPDX header; pragma is `>=0.8.29` for contracts and `>=0.8.29 <0.9.0` for tests and scripts.
+- `forge fmt` (`[fmt]` in `foundry.toml`), Solhint (`.solhint.json`), Prettier (`.prettierrc.yml`), and `.editorconfig`
+  own formatting and lint rules; run the tools instead of hand-formatting.
+- Every Solidity file carries an SPDX header; pragma is `>=0.8.29` for contracts and `>=0.8.29 <0.9.0` for tests and
+  scripts.
+- Import Forge Std through its `src/` directory (`forge-std/src/Test.sol`), because the remapping points at the package
+  root.
 
 ## Conventions
 
-- **Test naming**: `test_*` (unit), `testFuzz_*` (fuzz), `testFork_*` (fork). Test contracts inherit `forge-std`'s
-  `Test`; `setUp()` runs before each case.
-- **Fuzz runs**: 1,000 under the `default` profile, 10,000 under `ci`.
-- **Fork tests**: read `API_KEY_ALCHEMY` and silently pass when it is unset.
-- **Scripts**: inherit `BaseScript`; the broadcaster is taken from `$ETH_FROM`, else derived from `$MNEMONIC` (falls
-  back to a test mnemonic so scripts compile without env vars).
-- **Adding dependencies**: `bun install <pkg>` (or `bun install github:user/repo`), then add `name=node_modules/name` to
-  `remappings.txt`. Do not use git submodules.
-- **Env vars** (see `.env.example`): `API_KEY_ALCHEMY`, `API_KEY_ETHERSCAN`, `API_KEY_INFURA`, `MNEMONIC`,
-  `FOUNDRY_PROFILE`; `ETH_FROM` optionally overrides the broadcaster.
-- **Profiles**: `default` and `ci` (10k fuzz runs, verbosity 4), selected via `FOUNDRY_PROFILE`.
-- **RPC + Etherscan**: endpoints for mainnet, sepolia, arbitrum, avalanche, base, bnb_smart_chain, gnosis_chain,
-  optimism, polygon, and localhost are defined in `foundry.toml`.
+- **Tests** live in `tests/` (not Foundry's default `test/`). Name cases `test_*` (unit), `testFuzz_*` (fuzz), and
+  `testFork_*` (fork); inherit Forge Std's `Test`.
+- **Block timestamp**: the `default` profile pins `block.timestamp` to `1_738_368_000` (Feb 1, 2025); do not assume
+  wall-clock time.
+- **Fork tests**: read `API_KEY_ALCHEMY` (used by the `mainnet` RPC alias) and silently pass when it is unset. CI
+  provides the key and a weekly-rotating `FOUNDRY_FUZZ_SEED` to limit RPC usage.
+- **Scripts**: inherit `BaseScript` and use its `broadcast` modifier. The broadcaster is `$ETH_FROM`, else derived from
+  `$MNEMONIC`, else a test mnemonic so scripts compile without env vars. Browser-wallet scripts (`DeployBrowser.s.sol`)
+  inherit Forge Std's `Script` directly and call `vm.startBroadcast()` without an address.
+- **Adding dependencies**: `bun install <pkg>` (or `bun install github:user/repo#tag`), then add
+  `name/=node_modules/name/` to `remappings.txt`. Do not use git submodules.
+- **Env vars** (see `.env.example`): `API_KEY_ALCHEMY`, `API_KEY_ETHERSCAN` (mainnet verification only), `MNEMONIC`,
+  `FOUNDRY_PROFILE`; `ETH_FROM` optionally overrides the broadcaster. `API_KEY_INFURA` is a placeholder no config reads.
+
+## Template Bootstrap
+
+`.github/workflows/use-template.yml` runs on the first push to a repository created from this template: it runs
+`.github/scripts/rename.sh`, deletes `FUNDING.yml`, the script, and itself, then amends and force-pushes. The script
+rewrites `name`, `description`, and `author` in `package.json` with `jq`, and rewrites `PaulRBerg/foundry-template` only
+on README.md lines matching `gitpod` or `gha`. Keep those fields and badge reference lines intact when editing either
+file.
 
 ## Contribution Workflow
 
 - Default branch: `main`.
-- CI (`.github/workflows/ci.yml`) runs on every push/PR to `main` under the `ci` profile: lint (`bun run full-check`) →
-  build (`forge build --sizes`) → test (`forge test`).
-- Before opening a PR, run `bun run full-check` (or `bun run full-write` to auto-fix) and `forge test`.
+- CI (`.github/workflows/ci.yml`) runs on pushes to `main`, all pull requests, and manual dispatch under the `ci`
+  profile. `lint` (`bun run full-check`) and `build` (`forge build --sizes`) run in parallel; `test` (`forge test`) runs
+  after both pass.
+- Before opening a PR, run `bun run full-check` and `forge test`.
