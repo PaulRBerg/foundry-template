@@ -5,10 +5,10 @@
     "": {
       "name": "@prb/foundry-template",
       "dependencies": {
-        "@openzeppelin/contracts": "5.3.0",
+        "@openzeppelin/contracts": "5.6.1",
       },
       "devDependencies": {
-        "forge-std": "github:foundry-rs/forge-std#v1.9.7",
+        "forge-std": "github:foundry-rs/forge-std#v1.16.2",
         "prettier": "^3.5",
         "solhint": "^5.1",
       },
@@ -21,7 +21,7 @@
 
     "@babel/highlight": ["@babel/highlight@7.23.4", "", { "dependencies": { "@babel/helper-validator-identifier": "^7.22.20", "chalk": "^2.4.2", "js-tokens": "^4.0.0" } }, "sha512-acGdbYSfp2WheJoJm/EBBBLh/ID8KDc64ISZ9DYtBmC8/Q204PZJLHyzeB5qMzJ5trcOkybd78M4x2KWsUq++A=="],
 
-    "@openzeppelin/contracts": ["@openzeppelin/contracts@5.3.0", "", {}, "sha512-zj/KGoW7zxWUE8qOI++rUM18v+VeLTTzKs/DJFkSzHpQFPD/jKKF0TrMxBfGLl3kpdELCNccvB3zmofSzm4nlA=="],
+    "@openzeppelin/contracts": ["@openzeppelin/contracts@5.6.1", "", {}, "sha512-Ly6SlsVJ3mj+b18W3R8gNufB7dTICT105fJhodGAGgyC2oqnBAhqSiNDJ8V8DLY05cCz81GLI0CU5vNYA1EC/w=="],
 
     "@pnpm/config.env-replace": ["@pnpm/config.env-replace@1.1.0", "", {}, "sha512-htyl8TWnKL7K/ESFa1oW2UB5lVDxuF5DpM7tBi6Hu2LNL3mWkIzNLG6N4zoCUP1lCKNxWy/3iu8mS8MvToGd6w=="],
 
@@ -91,7 +91,7 @@
 
     "fast-json-stable-stringify": ["fast-json-stable-stringify@2.1.0", "", {}, "sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw=="],
 
-    "forge-std": ["forge-std@github:foundry-rs/forge-std#77041d2", {}, "foundry-rs-forge-std-77041d2", "sha512-ZFTn8yWNakfTzXF7vU3OoS9JT4Wa+BLfPWvPH3bZZCmysBhB0mhsBpCjku+5ihcv2CW5Wf74DAZFNhCy0dxZRA=="],
+    "forge-std": ["forge-std@github:foundry-rs/forge-std#bf647bd", {}, "foundry-rs-forge-std-bf647bd", "sha512-YRYu4Jg0V000bFg3dCXp8MoIaG6f7/TfgxqBFd7fd1gdU83uL4F3YH1ld8zdF41m+7Qc8Ew6z1/3HSyGC/5l9g=="],
 
     "form-data-encoder": ["form-data-encoder@2.1.4", "", {}, "sha512-yDYSgNMraqvnxiEXO4hi88+YZxaHC6QKzb5N84iRCTDeRO7ZALpir/lVmf/uXUhnwUr2O4HU8s/n6x+yNjQkHw=="],
 

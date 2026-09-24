@@ -7,8 +7,8 @@ and remapped through `remappings.txt` instead of git submodules.
 
 - **Solidity** `0.8.29` (pragma `>=0.8.29`), EVM target `shanghai`, optimizer on (10,000 runs)
 - **Foundry** (`forge`) — compile, test, fuzz, format, deploy
-- **Forge Std** `v1.9.7` — test and scripting framework
-- **OpenZeppelin Contracts** `5.3.0` — pre-installed contract library
+- **Forge Std** `v1.16.2` — test and scripting framework
+- **OpenZeppelin Contracts** `5.6.1` — pre-installed contract library
 - **Bun** — dependency manager (deps installed as Node.js packages, remapped in `remappings.txt`)
 - **Prettier** `3.5` — formatter for JSON/Markdown/YAML
 - **Solhint** `5.1` — Solidity linter
