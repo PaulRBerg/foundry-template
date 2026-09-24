@@ -168,18 +168,18 @@ Bulloak disambiguates the second test by appending its parent: `test_WhenBIsZero
 
 ## Commands
 
-| Command                                       | Effect                                                                |
-| --------------------------------------------- | --------------------------------------------------------------------- |
-| `bulloak scaffold -w -F -s '<pragma>' <tree>` | Write a new `.t.sol`; skips existing files                            |
-| `bulloak scaffold ... -m <tree>`              | Reference modifiers without emitting them (shared modifiers contract) |
-| `bulloak scaffold -wf ... <tree>`             | Overwrite an existing `.t.sol`, discarding implemented bodies         |
-| `bulloak check [-m] [-F] <trees...>`          | Verify that tests match the trees                                     |
-| `bulloak check --fix [-m] [-F] <trees...>`    | Insert missing tests and modifiers in place                           |
+| Command                                                       | Effect                                                                |
+| ------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `bulloak scaffold -w -F -s '<pragma>' <tree>`                 | Write a new `.t.sol`; skips existing files                            |
+| `bulloak scaffold ... -m <tree>`                              | Reference modifiers without emitting them (shared modifiers contract) |
+| `bulloak scaffold -wf ... <tree>`                             | Overwrite an existing `.t.sol`, discarding implemented bodies         |
+| `bulloak check [-m] [--format-descriptions] <trees...>`       | Verify that tests match the trees                                     |
+| `bulloak check --fix [-m] [--format-descriptions] <trees...>` | Insert missing tests and modifiers in place                           |
 
 - `-s` sets the pragma, which otherwise defaults to `0.8.0`; pass the project's test pragma, e.g.
   `-s '>=0.8.29 <0.9.0'`.
-- Pass `check` the same `-m` and `-F` flags used to scaffold; without `-F`, `--fix` writes lowercase comments without
-  periods.
+- Pass `check` the same `-m` and `--format-descriptions` flags used to scaffold; `check` rejects the `-F` short form
+  that `scaffold` accepts. Without `--format-descriptions`, `--fix` writes lowercase comments without periods.
 - `--fix` does not format its insertions; run `forge fmt` afterwards. If it crashes (bulloak 0.9 can panic with `-m` on
   nested trees), add the missing functions by hand from the warnings.
 - Pass multiple trees or a glob such as `tests/**/*.tree` to check a whole suite.

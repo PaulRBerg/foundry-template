@@ -65,9 +65,9 @@ Branching Tree Technique or the user asks for it. Install bulloak with `cargo in
    live in a shared contract. `-w` never overwrites an existing `.t.sol`; add `-f` only to deliberately replace one,
    which discards implemented bodies.
 3. Add imports, inheritance, and setup, then implement each test body.
-4. Verify alignment with `bulloak check <file.tree>`, passing the same `-m` and `-F` (`--format-descriptions`) flags
-   used to scaffold. `bulloak check --fix` with those flags inserts missing tests; run `forge fmt` on the file and
-   review the diff.
+4. Verify alignment with `bulloak check <file.tree>`, passing the same modifier and description flags used to scaffold:
+   `-m` and `--format-descriptions` (`check` has no `-F` short form). `bulloak check --fix` with those flags inserts
+   missing tests; run `forge fmt` on the file and review the diff.
 
 Tree syntax, naming rules, and examples are in [references/btt.md](references/btt.md).
 
