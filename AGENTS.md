@@ -48,6 +48,15 @@ and remapped through `remappings.txt` instead of git submodules.
   `FOUNDRY_PROFILE`; `ETH_FROM` optionally overrides the broadcaster. `ROUTEMESH_API_KEY` is a placeholder no config
   reads.
 
+## Agent Skills
+
+Project skills live in `.agents/skills/`, with relative Claude Code symlinks in `.claude/skills/`:
+
+- `solidity-coding` — contract conventions, NatSpec, errors, security, gas, events, and upgrades.
+- `foundry-testing` — concrete, fuzz, fork, and invariant tests, bulloak BTT specs, scripts, and gas benchmarking.
+
+Update the skills whenever this file's toolchain, directory, or naming conventions change.
+
 ## Template Bootstrap
 
 `.github/workflows/use-template.yml` runs on the first push to a repository created from this template: it runs
