@@ -5,7 +5,7 @@ import { Foo } from "../src/Foo.sol";
 
 import { BaseScript } from "./Base.s.sol";
 
-/// @dev See the Solidity Scripting tutorial: https://book.getfoundry.sh/guides/scripting-with-solidity
+/// @dev See the Solidity Scripting tutorial: https://getfoundry.sh/forge/scripting
 contract Deploy is BaseScript {
     function run() public broadcast returns (Foo foo) {
         foo = new Foo();

@@ -11,7 +11,7 @@ interface IERC20 {
 }
 
 /// @dev If this is your first time with Forge, read this tutorial in the Foundry Book:
-/// https://book.getfoundry.sh/forge/writing-tests
+/// https://getfoundry.sh/forge/testing
 contract FooTest is Test {
     Foo internal foo;
 
