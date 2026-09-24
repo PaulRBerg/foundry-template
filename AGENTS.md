@@ -5,7 +5,7 @@ and remapped through `remappings.txt` instead of git submodules.
 
 ## Toolchain
 
-- `solc` is pinned to `0.8.29` (`auto_detect_solc = false`). The EVM target is unpinned, so it follows the installed
+- `solc` is pinned to `0.8.37` (`auto_detect_solc = false`). The EVM target is unpinned, so it follows the installed
   Foundry's default (`osaka` as of Foundry 1.8); check the effective value with `forge config | grep evm_version`, and
   set `evm_version` in `foundry.toml` before deploying to a chain that lacks that hard fork.
 - Pinned versions live in `package.json` (Forge Std, OpenZeppelin Contracts, Prettier, Solhint) and `foundry.toml`
@@ -27,7 +27,7 @@ and remapped through `remappings.txt` instead of git submodules.
 
 - `forge fmt` (`[fmt]` in `foundry.toml`), Solhint (`.solhint.json`), Prettier (`.prettierrc.yml`), and `.editorconfig`
   own formatting and lint rules; run the tools instead of hand-formatting.
-- Every Solidity file carries an SPDX header; pragma is `>=0.8.29` for contracts and `>=0.8.29 <0.9.0` for tests and
+- Every Solidity file carries an SPDX header; pragma is `>=0.8.37` for contracts and `>=0.8.37 <0.9.0` for tests and
   scripts.
 - Import Forge Std through its `src/` directory (`forge-std/src/Test.sol`), because the remapping points at the package
   root.

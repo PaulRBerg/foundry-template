@@ -177,7 +177,7 @@ Bulloak disambiguates the second test by appending its parent: `test_WhenBIsZero
 | `bulloak check --fix [-m] [--format-descriptions] <trees...>` | Insert missing tests and modifiers in place                           |
 
 - `-s` sets the pragma, which otherwise defaults to `0.8.0`; pass the project's test pragma, e.g.
-  `-s '>=0.8.29 <0.9.0'`.
+  `-s '>=0.8.37 <0.9.0'`.
 - Pass `check` the same `-m` and `--format-descriptions` flags used to scaffold; `check` rejects the `-F` short form
   that `scaffold` accepts. Without `--format-descriptions`, `--fix` writes lowercase comments without periods.
 - `--fix` does not format its insertions; run `forge fmt` afterwards. If it crashes (bulloak 0.9 can panic with `-m` on
