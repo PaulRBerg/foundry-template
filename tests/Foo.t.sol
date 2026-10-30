@@ -6,22 +6,33 @@ import { console2 } from "forge-std/src/console2.sol";
 
 import { Foo } from "../src/Foo.sol";
 
+/// @title IERC20
+/// @author Paul Razvan Berg
+/// @notice Minimal ERC-20 interface used by the fork test.
 interface IERC20 {
+    /// @notice Returns the token balance of an account.
+    /// @param account The account to query.
+    /// @return The account's token balance.
     function balanceOf(address account) external view returns (uint256);
 }
 
 /// @dev If this is your first time with Forge, read this tutorial in the Foundry Book:
 /// https://getfoundry.sh/forge/testing
+/// @title FooTest
+/// @author Paul Razvan Berg
+/// @notice Exercises the example contract.
 contract FooTest is Test {
     Foo internal foo;
 
     /// @dev A function invoked before each test case is run.
+    /// @notice Initializes the contract-under-test.
     function setUp() public virtual {
         // Instantiate the contract-under-test.
         foo = new Foo();
     }
 
     /// @dev Basic test. Run it with `forge test -vvv` to see the console log.
+    /// @notice Checks that `Foo.echo` returns its input.
     function test_Example() external view {
         console2.log("Hello World");
         uint256 x = 42;
@@ -31,6 +42,8 @@ contract FooTest is Test {
     /// @dev Fuzz test that provides random values for an unsigned integer, but which rejects zero as an input.
     /// If you need more sophisticated input validation, you should use the `bound` utility instead.
     /// See https://twitter.com/PaulRBerg/status/1622558791685242880
+    /// @notice Checks `Foo.echo` for a nonzero fuzz input.
+    /// @param x The input value to check.
     function testFuzz_Example(uint256 x) external view {
         vm.assume(x != 0); // or x = bound(x, 1, 100)
         assertEq(foo.echo(x), x, "value mismatch");
@@ -38,6 +51,7 @@ contract FooTest is Test {
 
     /// @dev Fork test that runs against an Ethereum Mainnet fork. For this to work, you need to set `API_KEY_ALCHEMY`
     /// in your environment You can get an API key for free at https://alchemy.com.
+    /// @notice Checks a known USDC balance on an Ethereum Mainnet fork.
     function testFork_Example() external {
         // Silently pass this test if there is no API key.
         string memory alchemyApiKey = vm.envOr("API_KEY_ALCHEMY", string(""));

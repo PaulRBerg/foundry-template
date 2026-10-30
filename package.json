@@ -11,9 +11,9 @@
     "@openzeppelin/contracts": "5.7.0"
   },
   "devDependencies": {
-    "forge-std": "github:foundry-rs/forge-std#v1.16.2",
-    "prettier": "^3.5",
-    "solhint": "^5.1"
+    "forge-std": "github:foundry-rs/forge-std#v1.17.0",
+    "prettier": "^3.9.10",
+    "solhint": "^6.2.5"
   },
   "keywords": [
     "blockchain",

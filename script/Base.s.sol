@@ -3,6 +3,9 @@ pragma solidity >=0.8.37 <0.9.0;
 
 import { Script } from "forge-std/src/Script.sol";
 
+/// @title BaseScript
+/// @author Paul Razvan Berg
+/// @notice Provides a configured broadcaster for deployment scripts.
 abstract contract BaseScript is Script {
     /// @dev Included to enable compilation of the script without a $MNEMONIC environment variable.
     string internal constant TEST_MNEMONIC = "test test test test test test test test test test test junk";
